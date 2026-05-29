@@ -26,13 +26,47 @@
   </div>
 </header>
 
+<script>
+  (function () {
+    var header = document.querySelector('header');
+    var hero = document.querySelector('.hero');
+
+    if (!hero) return;
+
+    header.classList.add('header--hidden');
+
+    var observer = new IntersectionObserver(function (entries) {
+      var heroVisible = entries[0].isIntersecting;
+      if (heroVisible) {
+        header.classList.add('header--hidden');
+      } else {
+        header.classList.remove('header--hidden');
+      }
+    }, { threshold: 0 });
+
+    observer.observe(hero);
+  })();
+</script>
+
 {% stylesheet %}
   header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     height: 5rem;
+    padding-inline: var(--page-margin);
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-background);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  header.header--hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
   }
   header a {
     position: relative;

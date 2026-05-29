@@ -9,12 +9,15 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
-      "settings": {}
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Your headline here",
+        "body": "A short description that supports your heading and tells visitors what to expect."
+      }
     }
   },
   "order": [
-    "main"
+    "hero"
   ]
 }

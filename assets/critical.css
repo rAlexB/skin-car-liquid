@@ -94,6 +94,11 @@ input[type="submit"]:hover {
   opacity: 0.9;
 }
 
+/* Offset fixed header on pages without a hero */
+body:not(:has(.hero)) {
+  padding-top: 5rem;
+}
+
 /** Section layout utilities */
 
 /**
