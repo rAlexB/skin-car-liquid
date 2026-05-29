@@ -1,0 +1,1 @@
+/Users/rubenbarbeiro/Repos/tinker/AGENTS.md
