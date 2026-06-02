@@ -85,7 +85,7 @@ input[type="submit"] {
   border: none;
   cursor: pointer;
   padding: 0.75rem 1.5rem;
-  border-radius: var(--style-border-radius-inputs);
+  border-radius: var(--style-border-radius-buttons);
   font: inherit;
 }
 

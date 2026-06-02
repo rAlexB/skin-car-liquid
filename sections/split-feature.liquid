@@ -1,16 +1,20 @@
 {% style %}
-  #shopify-section-{{ section.id }} .split-feature {
+  #shopify-section-{{ section.id }} {
     margin-top: {{ section.settings.margin_top }}rem;
     margin-bottom: {{ section.settings.margin_bottom }}rem;
   }
+  #shopify-section-{{ section.id }} .split-feature__left,
+  #shopify-section-{{ section.id }} .split-feature__right-img-wrap {
+    border-radius: {{ section.settings.media_border_radius }}px;
+  }
 {% endstyle %}
+
+{%- if section.settings.heading != blank -%}
+  <h2 class="split-feature__heading">{{ section.settings.heading }}</h2>
+{%- endif -%}
 
 <div class="split-feature full-width">
   <div class="split-feature__inner">
-
-    {%- if section.settings.heading != blank -%}
-      <h2 class="split-feature__heading">{{ section.settings.heading }}</h2>
-    {%- endif -%}
 
     <div class="split-feature__grid">
 
@@ -74,22 +78,25 @@
 
   .split-feature__heading {
     text-align: center;
-    color: var(--color-highlight-text);
-    margin-bottom: 3rem;
+    color: var(--color-foreground);
+    padding-inline: var(--page-margin);
+    max-width: var(--page-width);
+    margin-inline: auto;
+    margin-bottom: 2rem;
   }
 
   .split-feature__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    align-items: stretch;
+    min-height: 420px;
   }
 
-  /* Left block — image/video fills the column height set by the right column */
   .split-feature__left {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    min-height: 420px;
   }
 
   .split-feature__left-img,
@@ -140,7 +147,7 @@
     background-color: var(--color-accent);
     color: var(--color-accent-text);
     padding: 0.75rem 1.75rem;
-    border-radius: var(--style-border-radius-inputs);
+    border-radius: var(--style-border-radius-buttons);
     text-decoration: none;
     font-weight: 600;
     transition: opacity 0.2s;
@@ -185,6 +192,16 @@
       "step": 0.5,
       "unit": "rem",
       "default": 4
+    },
+    {
+      "type": "range",
+      "id": "media_border_radius",
+      "label": "Media corner radius",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 8
     },
     {
       "type": "text",

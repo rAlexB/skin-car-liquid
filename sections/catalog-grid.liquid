@@ -1,0 +1,318 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ section.settings.margin_top }}rem;
+    margin-bottom: {{ section.settings.margin_bottom }}rem;
+    --mobile-tile-height: {{ section.settings.mobile_tile_height }}px;
+    --tile-gap: {{ section.settings.tile_gap }}px;
+  }
+  #shopify-section-{{ section.id }} .catalog-grid__row {
+    height: {{ section.settings.tile_height }}px;
+    gap: {{ section.settings.tile_gap }}px;
+  }
+  #shopify-section-{{ section.id }} .catalog-grid__inner {
+    gap: {{ section.settings.tile_gap }}px;
+  }
+  #shopify-section-{{ section.id }} .catalog-grid__tile {
+    border-radius: {{ section.settings.tile_border_radius }}px;
+  }
+{% endstyle %}
+
+{%- if section.settings.heading != blank -%}
+  <h2 class="catalog-grid__heading">{{ section.settings.heading }}</h2>
+{%- endif -%}
+
+<div class="catalog-grid full-width catalog-grid--mobile-cols-{{ section.settings.mobile_columns }}" data-catalog-grid>
+  <div class="catalog-grid__inner">
+
+    {%- if collections.size > 0 -%}
+
+      {%- for collection in collections -%}
+        {%- assign position = forloop.index0 | modulo: 3 -%}
+
+        {%- if position == 0 -%}
+          {%- assign row_num = forloop.index0 | divided_by: 3 -%}
+          {%- assign pattern = row_num | modulo: 3 -%}
+          {%- assign tiles_left = collections.size | minus: forloop.index0 -%}
+          {%- if tiles_left >= 3 -%}
+            {%- assign capacity = 3 -%}
+          {%- else -%}
+            {%- assign capacity = tiles_left -%}
+          {%- endif -%}
+          <div class="catalog-grid__row" data-catalog-row data-capacity="{{ capacity }}">
+        {%- endif -%}
+
+        {%- if section.settings.equal_width -%}
+          {%- assign tile_flex = 1 -%}
+        {%- else -%}
+          {%- assign combined = pattern | times: 3 | plus: position -%}
+          {%- case combined -%}
+            {%- when 0 -%}{%- assign tile_flex = 45 -%}
+            {%- when 1 -%}{%- assign tile_flex = 30 -%}
+            {%- when 2 -%}{%- assign tile_flex = 25 -%}
+            {%- when 3 -%}{%- assign tile_flex = 25 -%}
+            {%- when 4 -%}{%- assign tile_flex = 45 -%}
+            {%- when 5 -%}{%- assign tile_flex = 30 -%}
+            {%- when 6 -%}{%- assign tile_flex = 30 -%}
+            {%- when 7 -%}{%- assign tile_flex = 25 -%}
+            {%- when 8 -%}{%- assign tile_flex = 45 -%}
+            {%- else -%}{%- assign tile_flex = 33 -%}
+          {%- endcase -%}
+        {%- endif -%}
+
+        <a
+          class="catalog-grid__tile"
+          href="{{ collection.url }}"
+          style="flex: {{ tile_flex }}"
+          aria-label="{{ collection.title | escape }}"
+        >
+          {%- if collection.featured_image != blank -%}
+            {{ collection.featured_image
+              | image_url: width: 1200
+              | image_tag:
+                loading: 'lazy',
+                widths: '400,700,1000,1200',
+                class: 'catalog-grid__tile-img',
+                alt: collection.title | escape
+            }}
+          {%- else -%}
+            <div class="catalog-grid__tile-placeholder"></div>
+          {%- endif -%}
+          <div class="catalog-grid__tile-overlay">
+            <span class="catalog-grid__tile-title">{{ collection.title }}</span>
+          </div>
+        </a>
+
+        {%- assign next_pos = forloop.index0 | plus: 1 | modulo: 3 -%}
+        {%- if next_pos == 0 or forloop.last -%}
+          </div>
+        {%- endif -%}
+
+      {%- endfor -%}
+
+    {%- else -%}
+      <p class="catalog-grid__empty">No collections found.</p>
+    {%- endif -%}
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var grid = document.querySelector('[data-catalog-grid]');
+    if (!grid) return;
+
+    var rows = Array.from(grid.querySelectorAll('[data-catalog-row]'));
+    var tiles = Array.from(grid.querySelectorAll('.catalog-grid__tile'));
+
+    for (var i = tiles.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = tiles[i]; tiles[i] = tiles[j]; tiles[j] = tmp;
+    }
+
+    var t = 0;
+    rows.forEach(function (row) {
+      var capacity = parseInt(row.dataset.capacity, 10);
+      while (row.firstChild) row.removeChild(row.firstChild);
+      for (var i = 0; i < capacity && t < tiles.length; i++) {
+        row.appendChild(tiles[t++]);
+      }
+    });
+  })();
+</script>
+
+{% stylesheet %}
+  .catalog-grid__heading {
+    text-align: center;
+    color: var(--color-background-text);
+    margin-bottom: 2rem;
+  }
+
+  .catalog-grid__inner {
+    display: flex;
+    flex-direction: column;
+    padding-inline: var(--page-margin);
+    padding-block: 3rem;
+    max-width: var(--page-width);
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .catalog-grid__row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .catalog-grid__tile {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .catalog-grid__tile-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+  }
+
+  .catalog-grid__tile:hover .catalog-grid__tile-img {
+    transform: scale(1.05);
+  }
+
+  .catalog-grid__tile-placeholder {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-highlight);
+  }
+
+  .catalog-grid__tile-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+  }
+
+  .catalog-grid__tile-title {
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  .catalog-grid__empty {
+    color: var(--color-background-text);
+    text-align: center;
+    padding: 4rem 0;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    .catalog-grid__row {
+      flex-wrap: wrap;
+      height: auto !important;
+    }
+
+    .catalog-grid__tile {
+      flex: none !important;
+      height: var(--mobile-tile-height);
+    }
+
+    .catalog-grid--mobile-cols-1 .catalog-grid__tile {
+      width: 100%;
+    }
+
+    .catalog-grid--mobile-cols-2 .catalog-grid__tile {
+      width: calc(50% - var(--tile-gap) / 2);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Catalog Grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top margin",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom margin",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "header",
+      "content": "Tiles"
+    },
+    {
+      "type": "checkbox",
+      "id": "equal_width",
+      "label": "Equal tile widths",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "tile_height",
+      "label": "Tile height",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "tile_border_radius",
+      "label": "Tile corner radius",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "tile_gap",
+      "label": "Gap between tiles",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Columns",
+      "options": [
+        { "value": "1", "label": "1 column" },
+        { "value": "2", "label": "2 columns" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "mobile_tile_height",
+      "label": "Tile height",
+      "min": 120,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "default": 200
+    }
+  ],
+  "presets": [
+    {
+      "name": "Catalog Grid"
+    }
+  ]
+}
+{% endschema %}
