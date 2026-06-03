@@ -97,3 +97,27 @@ Section and block schema labels use `t:` translation keys (e.g. `"label": "t:lab
 - `sections 'header-group'` → `sections 'footer-group'` around `content_for_layout`
 
 Page structure is defined by JSON templates in `templates/` which reference sections by name.
+
+## Design inspiration: Car Detailing Theme Export
+
+The folder `Car Detailing Theme Export Jun 3 2026/` at the repo root is a reference export of a fully built car detailing Shopify theme. When the user asks for design inspiration, section ideas, or says "use the inspiration theme" / "check the reference theme", read relevant files from this folder as a guide.
+
+### Folder structure mirrors this theme
+
+```
+Car Detailing Theme Export Jun 3 2026/
+  assets/      — JS components and base.css
+  sections/    — Full section implementations (hero, carousel, media-with-content, marquee, etc.)
+  snippets/    — Reusable partials (bento-grid, card-gallery, background-media, etc.)
+  config/      — settings_schema.json and settings_data.json
+  templates/   — JSON page templates
+  locales/     — Translation strings
+```
+
+### How to use this folder
+
+- **Section ideas**: read `sections/<name>.liquid` to see how a section is structured, what schema settings it exposes, and how it wires CSS.
+- **Snippet patterns**: read `snippets/<name>.liquid` for reusable component patterns (cards, grids, buttons, media backgrounds).
+- **Global settings**: read `config/settings_schema.json` to see what color schemes and typography settings the reference theme defines.
+- **CSS conventions**: read `assets/base.css` for baseline styles used in the reference theme.
+- Always adapt code from this folder to the skin-car architecture (CSS variables from `css-variables.liquid`, skeleton theme conventions, and `--color-*` tokens) — do not copy-paste verbatim.
