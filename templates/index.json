@@ -12,12 +12,46 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "heading": "Your headline here",
-        "body": "A short description that supports your heading and tells visitors what to expect."
+        "background_image": "shopify://shop_images/theme_cover_image.jpg",
+        "heading": "O teu carro, cuidado",
+        "heading_size": 3.5,
+        "body": "Nos cuidamos do teu carro tu usufruis, sem dores de cabeça, sem a necessidade de pensar duas vezes"
+      }
+    },
+    "split_feature_ijUMpn": {
+      "type": "split-feature",
+      "name": "Split Feature",
+      "settings": {
+        "margin_top": 4,
+        "margin_bottom": 4,
+        "media_border_radius": 8,
+        "heading": "O que sabemos",
+        "left_image": "shopify://shop_images/Main.jpg",
+        "subheading": "Premium Car Care",
+        "text": "Usamos as melhores tecnicas do mercado para enaltecer",
+        "cta_label": "Learn more",
+        "cta_url": ""
+      }
+    },
+    "catalog_grid_UVx7bC": {
+      "type": "catalog-grid",
+      "name": "Catalog Grid",
+      "settings": {
+        "margin_top": 4,
+        "margin_bottom": 4,
+        "heading": "Os nossos produtos",
+        "equal_width": false,
+        "tile_height": 200,
+        "tile_border_radius": 0,
+        "tile_gap": 20,
+        "mobile_columns": "1",
+        "mobile_tile_height": 200
       }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "split_feature_ijUMpn",
+    "catalog_grid_UVx7bC"
   ]
 }
