@@ -3595,7 +3595,7 @@ fly-to-cart.fly-to-cart--sticky {
   display: inline-flex;
   height: calc(var(--variant-picker-swatch-height) / 1.5);
   font-size: var(--font-size--xs);
-  border-radius: 20px;
+  border-radius: 0;
   min-width: 20px;
   padding: 0 6px;
   background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10-25));
@@ -3928,7 +3928,7 @@ text-component {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(var(--color-foreground-rgb) / var(--opacity-40));
-  border-radius: 20px;
+  border-radius: 0;
   border: 6px solid transparent;
   background-clip: content-box;
   transition: background-color 0.2s;
@@ -4021,7 +4021,7 @@ text-component {
   aspect-ratio: 3 / 4;
   background-color: var(--color-foreground);
   opacity: var(--skeleton-opacity);
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 @media screen and (max-width: 749px) {

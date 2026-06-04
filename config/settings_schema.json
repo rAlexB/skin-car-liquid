@@ -354,25 +354,25 @@
       {
         "type": "font_picker",
         "id": "type_body_font",
-        "default": "work_sans_n4",
+        "default": "instrument_sans_n4",
         "label": "t:options.body"
       },
       {
         "type": "font_picker",
         "id": "type_subheading_font",
-        "default": "work_sans_n5",
+        "default": "instrument_sans_n4",
         "label": "t:options.subheading"
       },
       {
         "type": "font_picker",
         "id": "type_heading_font",
-        "default": "anonymous_pro_n4",
+        "default": "instrument_sans_n4",
         "label": "t:options.heading"
       },
       {
         "type": "font_picker",
         "id": "type_accent_font",
-        "default": "anonymous_pro_n4",
+        "default": "instrument_sans_n4",
         "label": "t:options.accent"
       },
       {
@@ -1461,7 +1461,7 @@
         "step": 2,
         "unit": "px",
         "label": "t:settings.badge_corner_radius",
-        "default": 40
+        "default": 0
       },
       {
         "type": "header",
@@ -1550,7 +1550,7 @@
         "step": 1,
         "unit": "px",
         "label": "t:settings.border_radius",
-        "default": 100
+        "default": 0
       },
       {
         "type": "select",
@@ -1606,7 +1606,7 @@
         "step": 1,
         "unit": "px",
         "label": "t:settings.border_radius",
-        "default": 100
+        "default": 0
       },
       {
         "type": "select",
@@ -1656,7 +1656,7 @@
         "max": 40,
         "step": 1,
         "unit": "px",
-        "default": 40
+        "default": 0
       }
     ]
   },
@@ -1923,7 +1923,7 @@
         "step": 1,
         "unit": "px",
         "label": "t:settings.border_radius",
-        "default": 8
+        "default": 0
       },
       {
         "type": "select",
@@ -1984,7 +1984,7 @@
         "max": 16,
         "step": 1,
         "unit": "px",
-        "default": 8
+        "default": 0
       },
       {
         "type": "select",
@@ -2194,7 +2194,7 @@
         "step": 1,
         "unit": "px",
         "label": "t:settings.border_radius",
-        "default": 100
+        "default": 0
       },
       {
         "type": "select",
@@ -2265,7 +2265,7 @@
         "step": 1,
         "unit": "px",
         "label": "t:settings.border_radius",
-        "default": 8
+        "default": 0
       },
       {
         "type": "select",
