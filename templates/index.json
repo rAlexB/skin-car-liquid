@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "hero_iLBwPd": {
       "type": "hero",
@@ -42,6 +43,7 @@
             "overlay_color": "#00000026",
             "overlay_style": "solid",
             "gradient_direction": "to top",
+            "link": "",
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 0,
@@ -81,6 +83,7 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
@@ -93,7 +96,7 @@
                   "type": "text",
                   "name": "Heading",
                   "settings": {
-                    "text": "<h2><em>Introducing</em></h2>",
+                    "text": "",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -118,7 +121,7 @@
                 "text_m9AcWC": {
                   "type": "text",
                   "settings": {
-                    "text": "<h1>Our Newest Arrivals </h1>",
+                    "text": "<h1>Skin Car Detailing</h1>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -150,7 +153,7 @@
               "type": "text",
               "name": "Text",
               "settings": {
-                "text": "<p>Bring order to the chaos. When all your tech essentials have a dedicated spot on your desk, you don’t have to waste any time searching for them. </p>",
+                "text": "<p>O único sítio para tudo sobre a limpeza e cuidado do teu carro.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -185,7 +188,13 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
+        "image_1": "shopify://shop_images/Cambridge_Auto_Detailing_Photo.jpg",
         "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
         "open_in_new_tab": false,
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -205,6 +214,8 @@
         "gradient_direction": "to top",
         "blurred_reflection": false,
         "reflection_opacity": 75,
+        "border_radius": 0,
+        "button_border_radius": 4,
         "padding-block-start": 0,
         "padding-block-end": 31
       }
@@ -249,7 +260,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Make Your Workspace Yours</h3>",
+                "text": "<h3>Os nossos favoritos</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -283,11 +294,11 @@
           "settings": {
             "product_card_gap": 0,
             "inherit_color_scheme": false,
-            "color_scheme": "scheme-2",
+            "color_scheme": "scheme-1",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 10,
+            "border_radius": 2,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -341,6 +352,7 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "link": "",
                 "open_in_new_tab": false,
                 "padding-block-start": 24,
                 "padding-block-end": 24,
@@ -440,7 +452,9 @@
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
-        "color_scheme": "scheme-1",
+        "color_scheme": "skin-car-schema",
+        "border_radius": 0,
+        "button_border_radius": 4,
         "padding-block-start": 48,
         "padding-block-end": 64
       }
@@ -452,7 +466,9 @@
           "type": "_media-without-appearance",
           "static": true,
           "settings": {
-            "media_type": "video",
+            "media_type": "image",
+            "image": "shopify://shop_images/84834d8b-64af-476c-abde-67bf4f1cf311.jpg",
+            "link": "",
             "video_loop": true,
             "video_autoplay": true,
             "image_position": "cover",
@@ -469,32 +485,11 @@
             "gap": 24
           },
           "blocks": {
-            "image_y4ApqF": {
-              "type": "image",
-              "name": "t:names.image",
-              "settings": {
-                "image_ratio": "adapt",
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "text_Hf79zK": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Productivity Essentials</h2>",
+                "text": "<h2>O nosso catelogo</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -557,7 +552,6 @@
             }
           },
           "block_order": [
-            "image_y4ApqF",
             "text_Hf79zK",
             "text_jxGhdJ",
             "button_zg4nUF"
@@ -571,7 +565,9 @@
         "media_height": "50svh",
         "section_width": "page-width",
         "extend_media": true,
-        "color_scheme": "scheme-41dbb9c3-0866-4036-9494-aa0e1c1cedda",
+        "color_scheme": "scheme-1",
+        "border_radius": 0,
+        "button_border_radius": 4,
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -610,6 +606,7 @@
             "overlay_color": "#00000026",
             "overlay_style": "solid",
             "gradient_direction": "to top",
+            "link": "",
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 0,
@@ -663,7 +660,7 @@
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 10
+            "border_radius": 3
           },
           "blocks": {
             "collection_title_zyBdAJ": {
@@ -718,6 +715,7 @@
       ],
       "name": "Collection list",
       "settings": {
+        "collection_list": [],
         "layout_type": "bento",
         "carousel_on_mobile": true,
         "columns": 4,
@@ -731,7 +729,9 @@
         "icons_shape": "none",
         "section_width": "page-width",
         "gap": 12,
-        "color_scheme": "",
+        "color_scheme": "skin-car-schema",
+        "border_radius": 0,
+        "button_border_radius": 4,
         "padding-block-start": 48,
         "padding-block-end": 64
       }

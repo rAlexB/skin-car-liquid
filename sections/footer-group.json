@@ -40,7 +40,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Join our Newsletter — Get Updates, Offers and Invites.</p>",
+                "text": "<p>Precisas de uma limpeza ao teu carro?</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -69,12 +69,12 @@
                 "width": "fill",
                 "custom_width": 100,
                 "inherit_color_scheme": true,
+                "color_scheme": "scheme-4",
                 "heading": "",
                 "heading_preset": "h3",
-                "color_scheme": "scheme-4",
                 "border_style": "all",
                 "border_width": 0,
-                "border_radius": 100,
+                "border_radius": 0,
                 "input_type_preset": "paragraph",
                 "style_class": "button",
                 "display_type": "arrow",
@@ -102,7 +102,9 @@
         "media_height": "auto",
         "section_width": "full-width",
         "extend_media": true,
-        "color_scheme": "scheme-e1e09ff5-6396-47cd-ad7a-c05470cf2a2e",
+        "color_scheme": "skin-car-schema",
+        "border_radius": 0,
+        "button_border_radius": 4,
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -272,7 +274,7 @@
       "settings": {
         "section_width": "page-width",
         "gap": 12,
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "padding-block-start": 36,
         "padding-block-end": 18
       }
@@ -307,7 +309,7 @@
         "section_width": "page-width",
         "gap": 24,
         "divider_thickness": 1,
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "padding-block-start": 20,
         "padding-block-end": 18
       }
