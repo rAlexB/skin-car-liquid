@@ -100,24 +100,8 @@ Page structure is defined by JSON templates in `templates/` which reference sect
 
 ## Design inspiration: Car Detailing Theme Export
 
-The folder `Car Detailing Theme Export Jun 3 2026/` at the repo root is a reference export of a fully built car detailing Shopify theme. When the user asks for design inspiration, section ideas, or says "use the inspiration theme" / "check the reference theme", read relevant files from this folder as a guide.
+The reference export of a fully built car detailing Shopify theme lives outside the repo at `~/.claude/reference/car-detailing/`. Use the `/inspiration <topic>` skill to search it — it is completely invisible to Shopify CLI.
 
-### Folder structure mirrors this theme
+### `/inspiration <topic>` skill
 
-```
-Car Detailing Theme Export Jun 3 2026/
-  assets/      — JS components and base.css
-  sections/    — Full section implementations (hero, carousel, media-with-content, marquee, etc.)
-  snippets/    — Reusable partials (bento-grid, card-gallery, background-media, etc.)
-  config/      — settings_schema.json and settings_data.json
-  templates/   — JSON page templates
-  locales/     — Translation strings
-```
-
-### How to use this folder
-
-- **Section ideas**: read `sections/<name>.liquid` to see how a section is structured, what schema settings it exposes, and how it wires CSS.
-- **Snippet patterns**: read `snippets/<name>.liquid` for reusable component patterns (cards, grids, buttons, media backgrounds).
-- **Global settings**: read `config/settings_schema.json` to see what color schemes and typography settings the reference theme defines.
-- **CSS conventions**: read `assets/base.css` for baseline styles used in the reference theme.
-- Always adapt code from this folder to the skin-car architecture (CSS variables from `css-variables.liquid`, skeleton theme conventions, and `--color-*` tokens) — do not copy-paste verbatim.
+Invoke `/inspiration hero` (or any keyword) to search the reference theme and get a focused summary of relevant patterns. The skill greps sections, snippets, and blocks by content and filename, reads the best matches, and returns only what is useful for implementation — adapted to skin-car's CSS variable conventions.
