@@ -5,6 +5,8 @@
   }
   #shopify-section-{{ section.id }} .ba-slider__track {
     border-radius: {{ section.settings.border_radius }}px;
+    overflow: hidden;
+    aspect-ratio: {{ section.settings.aspect_ratio }};
   }
 {% endstyle %}
 
@@ -78,7 +80,6 @@
 
 {% stylesheet %}
   .ba-slider {
-    background-color: var(--color-background);
     padding-inline: var(--page-margin);
     padding-block: 4rem;
   }
@@ -104,11 +105,12 @@
   .ba-slider__track {
     position: relative;
     width: 100%;
+    max-width: 720px;
     overflow: hidden;
     user-select: none;
     touch-action: pan-y;
     cursor: col-resize;
-    aspect-ratio: 16 / 9;
+    border: 3px solid var(--color-highlight);
   }
 
   .ba-slider__after,
@@ -231,13 +233,12 @@
 
   @media (max-width: 768px) {
     .ba-slider {
-      padding-inline: 0;
+      padding-inline: var(--page-margin);
       padding-block: 2.5rem;
     }
 
     .ba-slider__track {
-      aspect-ratio: 4 / 3;
-      border-radius: 0 !important;
+      max-width: 100%;
     }
   }
 {% endstylesheet %}
@@ -339,6 +340,18 @@
       "step": 2,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Image aspect ratio",
+      "options": [
+        { "value": "16 / 9", "label": "16:9 — Wide" },
+        { "value": "4 / 3",  "label": "4:3 — Standard" },
+        { "value": "1 / 1",  "label": "1:1 — Square" },
+        { "value": "3 / 4",  "label": "3:4 — Portrait" }
+      ],
+      "default": "4 / 3"
     },
     {
       "type": "text",
