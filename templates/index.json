@@ -735,12 +735,29 @@
         "padding-block-start": 48,
         "padding-block-end": 64
       }
+    },
+    "before_after_slider_zihiPB": {
+      "type": "before-after-slider",
+      "name": "Before / After Slider",
+      "settings": {
+        "margin_top": 4,
+        "margin_bottom": 4,
+        "aspect_ratio": "16 / 9",
+        "border_radius": 0,
+        "heading": "See the Difference",
+        "before_image": "shopify://shop_images/Car_Being_Washed.jpg",
+        "before_label": "Before",
+        "after_image": "shopify://shop_images/Cambridge_Auto_Detailing_Photo.jpg",
+        "after_label": "After",
+        "subtext": "Drag the slider to see our professional detailing results."
+      }
     }
   },
   "order": [
     "hero_iLBwPd",
     "product_list_EDUBdR",
     "media_with_content_LfPdEJ",
-    "collection_list_xpBxCm"
+    "collection_list_xpBxCm",
+    "before_after_slider_zihiPB"
   ]
 }
