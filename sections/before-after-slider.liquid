@@ -8,7 +8,7 @@
     overflow: hidden;
     aspect-ratio: {{ section.settings.aspect_ratio }};
     max-width: {{ section.settings.max_width }}px;
-    border: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+    border: {{ section.settings.border_width }}px solid var(--color-border);
   }
 {% endstyle %}
 
@@ -16,7 +16,9 @@
   <h2 class="ba-slider__heading">{{ section.settings.heading }}</h2>
 {%- endif -%}
 
-<div class="ba-slider full-width">
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+
+<div class="ba-slider full-width color-{{ section.settings.color_scheme }}">
   <div class="ba-slider__inner">
 
     {%- if section.settings.before_image != blank and section.settings.after_image != blank -%}
@@ -82,6 +84,7 @@
 
 {% stylesheet %}
   .ba-slider {
+    background-color: var(--color-background);
     padding-inline: var(--page-margin);
     padding-block: 4rem;
   }
@@ -378,16 +381,10 @@
       "default": 0
     },
     {
-      "type": "select",
-      "id": "border_color",
-      "label": "Border color",
-      "options": [
-        { "value": "var(--color-highlight)", "label": "Brand dark" },
-        { "value": "var(--color-accent)",    "label": "Brand blue" },
-        { "value": "var(--color-foreground)", "label": "Foreground" },
-        { "value": "transparent",            "label": "None" }
-      ],
-      "default": "var(--color-highlight)"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
     },
     {
       "type": "range",
