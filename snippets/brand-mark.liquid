@@ -1,0 +1,99 @@
+{%- comment -%}
+  Usage:
+    {% render 'brand-mark' %}
+    {% render 'brand-mark', size: 'lg', show_name: false %}
+    {% render 'brand-mark', size: 'sm', inverse: true %}
+
+  Parameters:
+    size     — 'sm' | 'md' (default) | 'lg'
+    show_name — true (default) | false
+    inverse  — false (default) | true  →  uses logo_inverse + lighter text
+{%- endcomment -%}
+
+{%- liquid
+  assign bm_size      = size      | default: 'md'
+  assign bm_show_name = show_name | default: true
+  assign bm_inverse   = inverse   | default: false
+
+  case bm_size
+    when 'sm'
+      assign bm_logo_height = 28
+      assign bm_class       = 'brand-mark--sm'
+    when 'lg'
+      assign bm_logo_height = 64
+      assign bm_class       = 'brand-mark--lg'
+    else
+      assign bm_logo_height = 40
+      assign bm_class       = 'brand-mark--md'
+  endcase
+
+  if bm_inverse and settings.logo_inverse != blank
+    assign bm_logo = settings.logo_inverse
+  elsif settings.logo != blank
+    assign bm_logo = settings.logo
+  else
+    assign bm_logo = nil
+  endif
+-%}
+
+{% unless brand_mark_styles_loaded %}
+  {% assign brand_mark_styles_loaded = true %}
+  <style>
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .brand-mark__img {
+      display: block;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .brand-mark__name {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-mark--sm .brand-mark__img  { height: 28px; }
+    .brand-mark--sm .brand-mark__name { font-size: 0.85rem; }
+
+    .brand-mark--md .brand-mark__img  { height: 40px; }
+    .brand-mark--md .brand-mark__name { font-size: 1rem; }
+
+    .brand-mark--lg .brand-mark__img  { height: 64px; }
+    .brand-mark--lg .brand-mark__name { font-size: 1.35rem; }
+
+    .brand-mark--inverse .brand-mark__name {
+      color: var(--color-background);
+    }
+
+    .brand-mark:not(.brand-mark--inverse) .brand-mark__name {
+      color: var(--color-foreground);
+    }
+  </style>
+{% endunless %}
+
+<div class="brand-mark {{ bm_class }}{% if bm_inverse %} brand-mark--inverse{% endif %}">
+  {%- if bm_logo != nil -%}
+    {{
+      bm_logo
+      | image_url: height: bm_logo_height
+      | image_tag:
+        height: bm_logo_height,
+        loading: 'lazy',
+        class: 'brand-mark__img',
+        alt: shop.name
+    }}
+  {%- endif -%}
+
+  {%- if bm_show_name -%}
+    <span class="brand-mark__name">{{ shop.name }}</span>
+  {%- endif -%}
+</div>
