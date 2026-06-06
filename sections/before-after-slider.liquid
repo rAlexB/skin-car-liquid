@@ -1,0 +1,396 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ section.settings.margin_top }}rem;
+    margin-bottom: {{ section.settings.margin_bottom }}rem;
+  }
+  #shopify-section-{{ section.id }} .ba-slider__track {
+    border-radius: {{ section.settings.border_radius }}px;
+  }
+{% endstyle %}
+
+{%- if section.settings.heading != blank -%}
+  <h2 class="ba-slider__heading">{{ section.settings.heading }}</h2>
+{%- endif -%}
+
+<div class="ba-slider full-width">
+  <div class="ba-slider__inner">
+
+    {%- if section.settings.before_image != blank and section.settings.after_image != blank -%}
+      <div
+        class="ba-slider__track"
+        data-ba-slider
+        aria-label="{{ section.settings.heading | default: 'Before and after comparison' | escape }}"
+      >
+        <div class="ba-slider__after">
+          {{
+            section.settings.after_image
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              widths: '600,900,1200,1600',
+              class: 'ba-slider__img',
+              alt: section.settings.after_label | escape
+          }}
+        </div>
+
+        <div class="ba-slider__before" style="width: 50%;">
+          {{
+            section.settings.before_image
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              widths: '600,900,1200,1600',
+              class: 'ba-slider__img',
+              alt: section.settings.before_label | escape
+          }}
+        </div>
+
+        <div class="ba-slider__divider" style="left: 50%;">
+          <div class="ba-slider__handle" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+            <svg class="ba-slider__handle-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="19" fill="var(--color-accent)" stroke="var(--color-accent-text)" stroke-width="1"/>
+              <polyline points="14,20 9,15 9,25" fill="var(--color-accent-text)"/>
+              <polyline points="26,20 31,15 31,25" fill="var(--color-accent-text)"/>
+              <line x1="14" y1="20" x2="26" y2="20" stroke="var(--color-accent-text)" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+
+        {%- if section.settings.before_label != blank -%}
+          <span class="ba-slider__label ba-slider__label--before">{{ section.settings.before_label }}</span>
+        {%- endif -%}
+        {%- if section.settings.after_label != blank -%}
+          <span class="ba-slider__label ba-slider__label--after">{{ section.settings.after_label }}</span>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      <div class="ba-slider__placeholder">
+        <p>Upload a before image and an after image in the section settings.</p>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.subtext != blank -%}
+      <p class="ba-slider__subtext">{{ section.settings.subtext }}</p>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% stylesheet %}
+  .ba-slider {
+    background-color: var(--color-background);
+    padding-inline: var(--page-margin);
+    padding-block: 4rem;
+  }
+
+  .ba-slider__inner {
+    max-width: var(--page-width);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .ba-slider__heading {
+    text-align: center;
+    color: var(--color-foreground);
+    padding-inline: var(--page-margin);
+    max-width: var(--page-width);
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .ba-slider__track {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+    touch-action: pan-y;
+    cursor: col-resize;
+    aspect-ratio: 16 / 9;
+  }
+
+  .ba-slider__after,
+  .ba-slider__before {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ba-slider__before {
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .ba-slider__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+  }
+
+  .ba-slider__divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .ba-slider__divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: var(--color-accent);
+  }
+
+  .ba-slider__handle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    pointer-events: all;
+    cursor: col-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ba-slider__handle-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+    transition: transform 0.15s ease;
+  }
+
+  .ba-slider__track:active .ba-slider__handle-icon,
+  .ba-slider__handle:focus .ba-slider__handle-icon {
+    transform: scale(1.15);
+    outline: none;
+  }
+
+  .ba-slider__label {
+    position: absolute;
+    bottom: 1rem;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 3px;
+    pointer-events: none;
+  }
+
+  .ba-slider__label--before {
+    left: 1rem;
+  }
+
+  .ba-slider__label--after {
+    right: 1rem;
+  }
+
+  .ba-slider__subtext {
+    color: var(--color-foreground);
+    opacity: 0.7;
+    text-align: center;
+    margin: 0;
+    font-size: 0.95rem;
+    max-width: 600px;
+  }
+
+  .ba-slider__placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-foreground);
+    opacity: 0.5;
+    border: 2px dashed currentColor;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .ba-slider {
+      padding-inline: 0;
+      padding-block: 2.5rem;
+    }
+
+    .ba-slider__track {
+      aspect-ratio: 4 / 3;
+      border-radius: 0 !important;
+    }
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    function initSlider(track) {
+      const before = track.querySelector('.ba-slider__before');
+      const divider = track.querySelector('.ba-slider__divider');
+      const handle = track.querySelector('.ba-slider__handle');
+      let dragging = false;
+
+      function setPosition(clientX) {
+        const rect = track.getBoundingClientRect();
+        let pct = (clientX - rect.left) / rect.width;
+        pct = Math.min(1, Math.max(0, pct));
+        const pctStr = (pct * 100).toFixed(2) + '%';
+        before.style.width = pctStr;
+        divider.style.left = pctStr;
+        handle.setAttribute('aria-valuenow', Math.round(pct * 100));
+      }
+
+      track.addEventListener('mousedown', function (e) {
+        dragging = true;
+        setPosition(e.clientX);
+      });
+
+      window.addEventListener('mousemove', function (e) {
+        if (!dragging) return;
+        setPosition(e.clientX);
+      });
+
+      window.addEventListener('mouseup', function () {
+        dragging = false;
+      });
+
+      track.addEventListener('touchstart', function (e) {
+        dragging = true;
+        setPosition(e.touches[0].clientX);
+      }, { passive: true });
+
+      track.addEventListener('touchmove', function (e) {
+        if (!dragging) return;
+        setPosition(e.touches[0].clientX);
+      }, { passive: true });
+
+      track.addEventListener('touchend', function () {
+        dragging = false;
+      });
+
+      handle.addEventListener('keydown', function (e) {
+        const step = 0.05;
+        const rect = track.getBoundingClientRect();
+        const current = parseFloat(before.style.width) / 100;
+        if (e.key === 'ArrowLeft') {
+          setPosition(rect.left + (current - step) * rect.width);
+          e.preventDefault();
+        } else if (e.key === 'ArrowRight') {
+          setPosition(rect.left + (current + step) * rect.width);
+          e.preventDefault();
+        }
+      });
+    }
+
+    document.querySelectorAll('[data-ba-slider]').forEach(initSlider);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Before / After Slider",
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top margin",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom margin",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "See the Difference"
+    },
+    {
+      "type": "header",
+      "content": "Before image"
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Before image"
+    },
+    {
+      "type": "text",
+      "id": "before_label",
+      "label": "Before label",
+      "default": "Before"
+    },
+    {
+      "type": "header",
+      "content": "After image"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "After image"
+    },
+    {
+      "type": "text",
+      "id": "after_label",
+      "label": "After label",
+      "default": "After"
+    },
+    {
+      "type": "header",
+      "content": "Caption"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Drag the slider to see our professional detailing results."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before / After Slider"
+    }
+  ]
+}
+{% endschema %}
