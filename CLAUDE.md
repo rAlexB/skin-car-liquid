@@ -56,6 +56,58 @@ From the README — follow these conventions when wiring schema settings to CSS:
 
 Section-level overrides (e.g. per-section margins) go in a `{% style %}` block scoped to `#shopify-section-{{ section.id }}` to avoid bleeding into other sections.
 
+### Required settings for every section
+
+Every section must include these schema settings and apply them in the Liquid:
+
+**1. Color scheme** — lets the merchant pick a predefined colour pack in the theme editor:
+
+```json
+{
+  "type": "color_scheme",
+  "id": "color_scheme",
+  "label": "Color scheme",
+  "default": "scheme-1"
+}
+```
+
+Apply it in HTML as two elements — a full-bleed background layer and the section container:
+
+```liquid
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class="my-section full-width color-{{ section.settings.color_scheme }}">
+```
+
+Use `var(--color-background)`, `var(--color-foreground)`, `var(--color-border)`, etc. in CSS — these are automatically scoped by the scheme class. Never hardcode colour values or use `var(--color-highlight)` / `var(--color-accent)` directly in new sections.
+
+**2. Spacing** — top and bottom margin control:
+
+```json
+{
+  "type": "range",
+  "id": "margin_top",
+  "label": "Top margin",
+  "min": 0, "max": 10, "step": 0.5, "unit": "rem", "default": 4
+},
+{
+  "type": "range",
+  "id": "margin_bottom",
+  "label": "Bottom margin",
+  "min": 0, "max": 10, "step": 0.5, "unit": "rem", "default": 4
+}
+```
+
+Applied in `{% style %}`:
+
+```liquid
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ section.settings.margin_top }}rem;
+    margin-bottom: {{ section.settings.margin_bottom }}rem;
+  }
+{% endstyle %}
+```
+
 ### Section heading design pattern
 
 Section headings sit **outside** the section's styled container (e.g. a coloured background box) but remain part of the same Shopify section. The heading renders before the container div, uses `--color-foreground` (the page body text colour), and is constrained to the page width with `padding-inline: var(--page-margin)` and `max-width: var(--page-width); margin-inline: auto`.
