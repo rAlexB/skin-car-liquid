@@ -3,7 +3,36 @@
   Rendered from theme.liquid after theme-styles-variables and color-schemes.
 {% endcomment %}
 {% style %}
+  @font-face {
+    font-family: 'Baradig';
+    src: url('{{ 'Baradig-Bold.otf' | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Baradig';
+    src: url('{{ 'Baradig-Regular.otf' | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Baradig';
+    src: url('{{ 'Baradig-Medium.otf' | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Baradig';
+    src: url('{{ 'Baradig-Semibold.otf' | asset_url }}') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
   :root {
+    --font-brand: 'Baradig', sans-serif;
     --page-width: var(--{{ settings.page_width }}-page-width, 90rem);
     --page-margin: 20px;
     --color-background-text: var(--color-foreground);

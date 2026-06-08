@@ -78,6 +78,11 @@ body {
   color: var(--color-background-text);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-brand, sans-serif);
+  font-weight: 700;
+}
+
 button,
 input[type="submit"] {
   background-color: var(--color-accent);
