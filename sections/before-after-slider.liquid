@@ -12,14 +12,24 @@
   }
 {% endstyle %}
 
-{%- if section.settings.heading != blank -%}
-  <h2 class="ba-slider__heading">{{ section.settings.heading }}</h2>
-{%- endif -%}
-
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 
 <div class="ba-slider full-width color-{{ section.settings.color_scheme }}">
   <div class="ba-slider__inner">
+
+    {%- if section.settings.label != blank or section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="ba-slider__header">
+        {%- if section.settings.label != blank -%}
+          <p class="ba-slider__label">{{ section.settings.label }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ba-slider__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ba-slider__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
 
     {%- if section.settings.before_image != blank and section.settings.after_image != blank -%}
       <div
@@ -98,13 +108,36 @@
     gap: 1.5rem;
   }
 
-  .ba-slider__heading {
+  .ba-slider__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    color: var(--color-foreground);
-    padding-inline: var(--page-margin);
-    max-width: var(--page-width);
-    margin-inline: auto;
+    gap: 0.5rem;
+    width: 100%;
     margin-bottom: 2rem;
+  }
+
+  .ba-slider__label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .ba-slider__heading {
+    color: var(--color-foreground-heading);
+    margin: 0;
+  }
+
+  .ba-slider__subheading {
+    color: var(--color-foreground);
+    opacity: 0.75;
+    margin: 0;
+    max-width: 52ch;
+    line-height: 1.6;
   }
 
   .ba-slider__track {
@@ -397,10 +430,27 @@
       "default": 3
     },
     {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "placeholder": "Our Work",
+      "info": "Small uppercase text shown above the heading"
+    },
+    {
       "type": "text",
       "id": "heading",
       "label": "Heading",
       "default": "See the Difference"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "placeholder": "A short line shown below the heading"
     },
     {
       "type": "header",
