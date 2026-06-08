@@ -180,6 +180,7 @@
     "quick_order_list": "Lista de encomendas rápidas",
     "column": "Coluna",
     "comparison_slider": "Controlo de deslize de comparação",
+    "before_after_slider": "Comparação Antes / Depois",
     "slideshow_full_frame": "Apresentação de diapositivos: ecrã inteiro",
     "slideshow_inset": "Apresentação de diapositivos: recuado",
     "image_compare": "Comparação de imagens",
@@ -561,7 +562,15 @@
     "image_1": "Imagem 1",
     "image_2": "Imagem 2",
     "after_image": "Imagem posterior",
+    "after_label": "Etiqueta do depois",
     "before_image": "Imagem anterior",
+    "before_label": "Etiqueta do antes",
+    "image_aspect_ratio": "Proporção da imagem",
+    "initial_position": "Posição inicial do controlo de deslize",
+    "margin_top": "Margem superior",
+    "margin_bottom": "Margem inferior",
+    "subheading": "Subtítulo",
+    "subtext": "Subtexto",
     "cs_slider_style": "Estilo do controlo de deslize",
     "cs_slider_color": "Cor do controlo de deslize",
     "cs_slider_inner_color": "Cor interior do controlo de deslize",
@@ -578,7 +587,11 @@
     "y_position": "Posição vertical",
     "enable_sticky_add_to_cart": "Barra fixa de adicionar ao carrinho",
     "sticky_add_to_cart": "Barra fixa de adicionar ao carrinho",
-    "actions_display_style": "Estilo do menu"
+    "actions_display_style": "Estilo do menu",
+    "aspect_16_9": "16:9 — Panorâmico",
+    "aspect_4_3": "4:3 — Padrão",
+    "aspect_1_1": "1:1 — Quadrado",
+    "aspect_3_4": "3:4 — Retrato"
   },
   "options": {
     "apple": "Maçã",
@@ -970,7 +983,11 @@
     "resource_reference_product_sku": "Apresenta o SKU do produto principal",
     "content_layout": "Esquema do conteúdo",
     "mobile_media_1": "Conteúdo multimédia para telemóvel 1",
-    "utilities": "Utilitários"
+    "utilities": "Utilitários",
+    "section_header": "Cabeçalho da secção",
+    "before_image": "Imagem anterior",
+    "after_image": "Imagem posterior",
+    "caption": "Legenda"
   },
   "html_defaults": {
     "share_information_about_your": "<p>Partilhe informações sobre a sua marca com os seus clientes. Descreva um produto, faça anúncios ou dê as boas-vindas aos clientes na sua loja.</p>",
@@ -1064,7 +1081,13 @@
     "shop_the_look": "<h2>Comprar visual semelhante</h2>",
     "bestsellers": "Mais vendidos",
     "featured_collection": "Coleção em destaque",
-    "new_arrivals": "Novidades"
+    "new_arrivals": "Novidades",
+    "see_the_difference": "Veja a Diferença",
+    "before": "Antes",
+    "after": "Depois",
+    "drag_slider_hint": "Arraste o controlo de deslize para ver os resultados do nosso serviço profissional.",
+    "label_placeholder": "O Nosso Trabalho",
+    "subheading_placeholder": "Uma frase curta abaixo do título"
   },
   "info": {
     "video_alt_text": "Descreva o vídeo para utilizadores de tecnologia de apoio",
@@ -1089,7 +1112,8 @@
     "hide_logo_on_home_page_help": "O logótipo permanecerá visível quando o cabeçalho fixo estiver ativo",
     "media_type_info": "As funcionalidades são preenchidas a partir das ligações do menu",
     "logo_height": "Afeta apenas o logótipo do cabeçalho",
-    "actions_display_style": "Os ícones são sempre utilizados em telemóvel"
+    "actions_display_style": "Os ícones são sempre utilizados em telemóvel",
+    "label_above_heading": "Texto pequeno em maiúsculas apresentado acima do título"
   },
   "categories": {
     "basic": "Básico",

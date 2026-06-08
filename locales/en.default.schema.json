@@ -151,7 +151,11 @@
     "width": "Width",
     "width_is_automatically_optimized": "Width is automatically optimized for mobile.",
     "app_required_for_ratings": "An app is required for product ratings. [Learn more](https://help.shopify.com/manual/apps)",
-    "navigation": "Navigation"
+    "navigation": "Navigation",
+    "section_header": "Section header",
+    "before_image": "Before image",
+    "after_image": "After image",
+    "caption": "Caption"
   },
   "html_defaults": {
     "join_our_email_list": "<h2>Join our email list</h2>",
@@ -233,7 +237,8 @@
     "video_autoplay": "Videos will be muted by default",
     "video_external": "Use a YouTube or Vimeo URL",
     "pills_usage": "Used for applied filters, discount codes, and search suggestions",
-    "media_type_info": "Features are populated from your menu links"
+    "media_type_info": "Features are populated from your menu links",
+    "label_above_heading": "Small uppercase text shown above the heading"
   },
   "names": {
     "column": "Column",
@@ -434,7 +439,8 @@
     "video_section": "Video",
     "view_all_button": "View all",
     "pills": "Pills",
-    "comparison_slider": "Comparison slider"
+    "comparison_slider": "Comparison slider",
+    "before_after_slider": "Before / After Slider"
   },
   "options": {
     "above_carousel": "Above carousel",
@@ -1168,13 +1174,25 @@
     "media_type_2": "Media 2 type",
     "full_frame_on_mobile": "Full width on mobile",
     "after_image": "After image",
+    "after_label": "After label",
     "before_image": "Before image",
+    "before_label": "Before label",
+    "image_aspect_ratio": "Image aspect ratio",
+    "initial_position": "Initial slider position",
+    "margin_top": "Top margin",
+    "margin_bottom": "Bottom margin",
+    "subheading": "Subheading",
+    "subtext": "Subtext",
     "cs_slider_style": "Slider style",
     "cs_slider_color": "Slider color",
     "cs_slider_inner_color": "Slider inner color",
     "text_on_images": "Text on images",
     "x_position": "Horizontal position",
-    "y_position": "Vertical position"
+    "y_position": "Vertical position",
+    "aspect_16_9": "16:9 — Wide",
+    "aspect_4_3": "4:3 — Standard",
+    "aspect_1_1": "1:1 — Square",
+    "aspect_3_4": "3:4 — Portrait"
   },
   "text_defaults": {
     "accordion_heading": "Accordion heading",
@@ -1211,6 +1229,12 @@
     "welcome_to_our_store": "Welcome to our store",
     "what_is_return_policy": "What is the return policy?",
     "when_will_order_arrive": "When will I get my order?",
-    "where_are_products_made": "Where are your products manufactured?"
+    "where_are_products_made": "Where are your products manufactured?",
+    "see_the_difference": "See the Difference",
+    "before": "Before",
+    "after": "After",
+    "drag_slider_hint": "Drag the slider to see our professional detailing results.",
+    "label_placeholder": "Our Work",
+    "subheading_placeholder": "A short line shown below the heading"
   }
 }
