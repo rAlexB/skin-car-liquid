@@ -225,6 +225,7 @@
       "blocks": {
         "static-header": {
           "type": "_product-list-content",
+          "disabled": true,
           "static": true,
           "settings": {
             "content_direction": "column",
@@ -440,8 +441,8 @@
       "settings": {
         "collection": "all",
         "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
+        "carousel_on_mobile": true,
+        "max_products": 4,
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
@@ -450,12 +451,12 @@
         "icons_style": "arrow",
         "icons_shape": "none",
         "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
+        "horizontal_alignment": "center",
         "gap": 28,
         "color_scheme": "skin-car-schema",
         "border_radius": 0,
         "button_border_radius": 4,
-        "padding-block-start": 48,
+        "padding-block-start": 50,
         "padding-block-end": 64
       }
     },
@@ -742,8 +743,12 @@
       "settings": {
         "margin_top": 4,
         "margin_bottom": 4,
+        "max_width": 720,
         "aspect_ratio": "16 / 9",
+        "initial_position": 50,
         "border_radius": 0,
+        "color_scheme": "",
+        "border_width": 3,
         "heading": "See the Difference",
         "before_image": "shopify://shop_images/Car_Being_Washed.jpg",
         "before_label": "Before",
