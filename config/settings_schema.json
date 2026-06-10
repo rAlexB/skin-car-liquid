@@ -451,6 +451,10 @@
           {
             "value": "accent",
             "label": "t:options.accent"
+          },
+          {
+            "value": "brand",
+            "label": "Baradig"
           }
         ],
         "default": "heading"
@@ -599,6 +603,10 @@
           {
             "value": "accent",
             "label": "t:options.accent"
+          },
+          {
+            "value": "brand",
+            "label": "Baradig"
           }
         ],
         "default": "heading"
@@ -755,6 +763,10 @@
           {
             "value": "body",
             "label": "t:options.body"
+          },
+          {
+            "value": "brand",
+            "label": "Baradig"
           }
         ],
         "default": "heading"
@@ -911,6 +923,10 @@
           {
             "value": "body",
             "label": "t:options.body"
+          },
+          {
+            "value": "brand",
+            "label": "Baradig"
           }
         ],
         "default": "subheading"
@@ -1067,6 +1083,10 @@
           {
             "value": "body",
             "label": "t:options.body"
+          },
+          {
+            "value": "brand",
+            "label": "Baradig"
           }
         ],
         "default": "subheading"
@@ -1223,6 +1243,10 @@
           {
             "value": "body",
             "label": "t:options.body"
+          },
+          {
+            "value": "brand",
+            "label": "Baradig"
           }
         ],
         "default": "subheading"
