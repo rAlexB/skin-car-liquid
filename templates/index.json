@@ -741,8 +741,8 @@
       "type": "before-after-slider",
       "name": "Before / After Slider",
       "settings": {
-        "margin_top": 4,
-        "margin_bottom": 4,
+        "margin_top": 0,
+        "margin_bottom": 0,
         "max_width": 720,
         "aspect_ratio": "16 / 9",
         "initial_position": 50,
