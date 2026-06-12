@@ -656,8 +656,8 @@
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "flex-start",
             "collection_card_gap": 8,
-            "inherit_color_scheme": true,
-            "color_scheme": "scheme-6",
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-1",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -716,7 +716,9 @@
       ],
       "name": "Collection list",
       "settings": {
-        "collection_list": [],
+        "collection_list": [
+          "interior-cleaning"
+        ],
         "layout_type": "bento",
         "carousel_on_mobile": true,
         "columns": 4,
@@ -749,7 +751,9 @@
         "border_radius": 0,
         "color_scheme": "",
         "border_width": 3,
+        "label": "",
         "heading": "See the Difference",
+        "subheading": "",
         "before_image": "shopify://shop_images/Car_Being_Washed.jpg",
         "before_label": "Before",
         "after_image": "shopify://shop_images/Cambridge_Auto_Detailing_Photo.jpg",
