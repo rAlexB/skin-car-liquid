@@ -22,27 +22,6 @@
     assign ratio = block_settings.featured_products_aspect_ratio
   endif
 
-  # Category-based catalog (mirrors blocks/_header-menu.liquid)
-  assign cat_label = block_settings.category_catalog_label | default: 'Catalog'
-  assign cat_int_col = block_settings.category_catalog_interior_collection
-  assign cat_ext_col = block_settings.category_catalog_exterior_collection
-
-  if cat_int_col != blank
-    assign cat_int_url = cat_int_col.url
-    assign cat_int_title = cat_int_col.title
-  else
-    assign cat_int_url = '/collections/interior-cleaning-products'
-    assign cat_int_title = 'Interior Cleaning Products'
-  endif
-
-  if cat_ext_col != blank
-    assign cat_ext_url = cat_ext_col.url
-    assign cat_ext_title = cat_ext_col.title
-  else
-    assign cat_ext_url = '/collections/exterior-cleaning-products'
-    assign cat_ext_title = 'Exterior Cleaning Products'
-  endif
-
   ##
   # We only eager load heavy elements of the page when rendering this template
   # through the Section Rendering API.
@@ -116,41 +95,6 @@
           class="menu-drawer__menu has-submenu"
           role="list"
         >
-          {%- if block_settings.show_category_catalog -%}
-            <li
-              class="menu-drawer__list-item--flat{% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}"
-              style="--menu-drawer-animation-index: 0;"
-            >
-              <a
-                href="{{ cat_int_url }}"
-                class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset"
-              >
-                <span class="menu-drawer__menu-item-text wrap-text">{{ cat_label }}</span>
-              </a>
-              <ul
-                class="menu-drawer__menu menu-drawer__menu--childlist"
-                role="list"
-                tabindex="-1"
-              >
-                <li class="menu-drawer__list-item" style="--menu-drawer-animation-index: 1;">
-                  <a
-                    href="{{ cat_int_url }}"
-                    class="menu-drawer__menu-item menu-drawer__menu-item--child menu-drawer__animated-element focus-inset"
-                  >
-                    <span class="menu-drawer__menu-item-text wrap-text">{{ cat_int_title }}</span>
-                  </a>
-                </li>
-                <li class="menu-drawer__list-item" style="--menu-drawer-animation-index: 2;">
-                  <a
-                    href="{{ cat_ext_url }}"
-                    class="menu-drawer__menu-item menu-drawer__menu-item--child menu-drawer__animated-element focus-inset"
-                  >
-                    <span class="menu-drawer__menu-item-text wrap-text">{{ cat_ext_title }}</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          {%- endif -%}
           {%- comment -%}
             Handle menus with fewer than 3 levels of links
           {%- endcomment -%}
@@ -159,13 +103,6 @@
             {% assign animation_index = 0 %}
             {%- for link in linklist.links -%}
               {% assign animation_index = animation_index | plus: 1 %}
-              {%- liquid
-                if block_settings.show_category_catalog
-                  if link.type == 'catalog_link' or link.url == routes.all_products_collection_url
-                    continue
-                  endif
-                endif
-              -%}
               <li
                 style="--menu-drawer-animation-index: {{ animation_index }};"
                 class="{%- if block_settings.drawer_accordion -%}menu-drawer__list-item--deep{%- else -%}menu-drawer__list-item--flat{%- endif -%}{% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}"
@@ -319,13 +256,6 @@
             {% assign animation_index = 0 %}
             {%- for link in linklist.links -%}
               {% assign animation_index = animation_index | plus: 1 %}
-              {%- liquid
-                if block_settings.show_category_catalog
-                  if link.type == 'catalog_link' or link.url == routes.all_products_collection_url
-                    continue
-                  endif
-                endif
-              -%}
               <li
                 class="menu-drawer__list-item"
                 style="--menu-drawer-animation-index: {{ animation_index }};"

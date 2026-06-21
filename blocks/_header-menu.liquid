@@ -8,28 +8,6 @@
 
 {% liquid
   assign block_settings = block.settings
-
-  # Category-based catalog: replaces the all-products catalog link with a
-  # "Catalog" entry grouped by product category (interior / exterior cleaning).
-  assign cat_label = block_settings.category_catalog_label | default: 'Catalog'
-  assign cat_int_col = block_settings.category_catalog_interior_collection
-  assign cat_ext_col = block_settings.category_catalog_exterior_collection
-
-  if cat_int_col != blank
-    assign cat_int_url = cat_int_col.url
-    assign cat_int_title = cat_int_col.title
-  else
-    assign cat_int_url = '/collections/interior-cleaning-products'
-    assign cat_int_title = 'Interior Cleaning Products'
-  endif
-
-  if cat_ext_col != blank
-    assign cat_ext_url = cat_ext_col.url
-    assign cat_ext_title = cat_ext_col.title
-  else
-    assign cat_ext_url = '/collections/exterior-cleaning-products'
-    assign cat_ext_title = 'Exterior Cleaning Products'
-  endif
 %}
 
 {% case variant %}
@@ -60,22 +38,7 @@
             class="menu-list__list list-unstyled"
             role="list"
           >
-            {%- if block_settings.show_category_catalog -%}
-              <li>
-                <a href="{{ cat_int_url }}" class="menu-list__item">{{- cat_int_title -}}</a>
-              </li>
-              <li>
-                <a href="{{ cat_ext_url }}" class="menu-list__item">{{- cat_ext_title -}}</a>
-              </li>
-            {%- endif -%}
             {% for link in block_settings.menu.links %}
-              {%- liquid
-                if block_settings.show_category_catalog
-                  if link.type == 'catalog_link' or link.url == routes.all_products_collection_url
-                    continue
-                  endif
-                endif
-              -%}
               <li>
                 <a
                   href="{{ link.url }}"
@@ -120,52 +83,7 @@
     %}
 
     {% capture children %}
-      {%- if block_settings.show_category_catalog -%}
-        <li
-          role="presentation"
-          class="menu-list__list-item"
-          on:focus="/activate"
-          on:blur="/deactivate"
-          on:pointerenter="/activate"
-          on:pointerleave="/deactivate"
-        >
-          <a
-            href="{{ cat_int_url }}"
-            data-skip-node-update="true"
-            class="menu-list__link"
-            aria-controls="submenu-catalog"
-            aria-haspopup="true"
-            aria-expanded="false"
-            ref="menuitem"
-          >
-            <span class="menu-list__link-title">{{- cat_label -}}</span>
-          </a>
-          <div class="menu-list__submenu{{ color_scheme_classes }}" ref="submenu[]">
-            <div
-              id="submenu-catalog"
-              class="menu-list__submenu-inner"
-              style="{% render 'submenu-font-styles', settings: block_settings %}"
-            >
-              <ul class="catalog-categories-menu list-unstyled" role="list">
-                <li class="catalog-categories-menu__item">
-                  <a class="mega-menu__link mega-menu__link--parent" href="{{ cat_int_url }}">{{ cat_int_title }}</a>
-                </li>
-                <li class="catalog-categories-menu__item">
-                  <a class="mega-menu__link mega-menu__link--parent" href="{{ cat_ext_url }}">{{ cat_ext_title }}</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-      {%- endif -%}
       {% for link in block_settings.menu.links %}
-        {%- liquid
-          if block_settings.show_category_catalog
-            if link.type == 'catalog_link' or link.url == routes.all_products_collection_url
-              continue
-            endif
-          endif
-        -%}
         <li
           role="presentation"
           class="menu-list__list-item"
@@ -767,14 +685,6 @@
     /* preserves the inherited grid layout when this submenu wrapper is used */
     display: contents;
   }
-
-  /* Category-based catalog dropdown */
-  .catalog-categories-menu {
-    display: flex;
-    flex-direction: column;
-    gap: var(--padding-2xs);
-    margin: 0;
-  }
 {% endstylesheet %}
 
 {% schema %}
@@ -793,38 +703,6 @@
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
       "default": "primary"
-    },
-    {
-      "type": "header",
-      "content": "Category catalog"
-    },
-    {
-      "type": "paragraph",
-      "content": "Replaces the all-products catalog link in the navigation with a Catalog dropdown grouped by category. Create (or pick) a collection for each category below."
-    },
-    {
-      "type": "checkbox",
-      "id": "show_category_catalog",
-      "label": "Show category catalog",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "category_catalog_label",
-      "label": "Catalog label",
-      "default": "Catalog"
-    },
-    {
-      "type": "collection",
-      "id": "category_catalog_interior_collection",
-      "label": "Interior cleaning collection",
-      "info": "Defaults to /collections/interior-cleaning-products if left empty."
-    },
-    {
-      "type": "collection",
-      "id": "category_catalog_exterior_collection",
-      "label": "Exterior cleaning collection",
-      "info": "Defaults to /collections/exterior-cleaning-products if left empty."
     },
     {
       "type": "header",
