@@ -33,6 +33,8 @@
   }
   :root {
     --font-brand: 'Baradig', sans-serif;
+    /* Use the logo/brand font for H1 headings (overrides theme-styles-variables) */
+    --font-h1--family: var(--font-brand);
     --page-width: var(--{{ settings.page_width }}-page-width, 90rem);
     --page-margin: 20px;
     --color-background-text: var(--color-foreground);
