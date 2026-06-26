@@ -188,8 +188,8 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "video",
-        "image_1": "shopify://shop_images/Cambridge_Auto_Detailing_Photo.jpg",
-        "video_1": "shopify://files/videos/Skin-car.mov",
+        "image_1": "",
+        "video_1": "",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -469,7 +469,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/84834d8b-64af-476c-abde-67bf4f1cf311.jpg",
+            "image": "",
             "link": "",
             "video_loop": true,
             "video_autoplay": true,
@@ -717,12 +717,7 @@
       ],
       "name": "Collection list",
       "settings": {
-        "collection_list": [
-          "interior-cleaning",
-          "exterior",
-          "koch-chemie",
-          "vonixx"
-        ],
+        "collection_list": [],
         "layout_type": "bento",
         "carousel_on_mobile": true,
         "columns": 4,
@@ -758,9 +753,9 @@
         "label": "",
         "heading": "Vê a diferença",
         "subheading": "",
-        "before_image": "shopify://shop_images/Car_Being_Washed.jpg",
+        "before_image": "",
         "before_label": "Antes",
-        "after_image": "shopify://shop_images/Cambridge_Auto_Detailing_Photo.jpg",
+        "after_image": "",
         "after_label": "Depois",
         "subtext": "Arrasta o cursor para veres os resultados do nosso detailing profissional."
       }
