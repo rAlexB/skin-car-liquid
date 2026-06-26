@@ -286,10 +286,11 @@
         "copyright": {
           "type": "footer-copyright",
           "settings": {
-            "show_powered_by": true,
+            "show_powered_by": false,
             "font_size": "0.75rem",
             "case": "none",
-            "brand_text": "",
+            "brand_image": "shopify://shop_images/visium_logo_white.png",
+            "brand_text": ". Empowered by",
             "brand_link": "",
             "brand_logo_height": 1.5
           },
