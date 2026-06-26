@@ -19,7 +19,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/91599a07-3b31-49cf-82cd-64ceae9a783e.jpg",
+            "image": "shopify://shop_images/FCB1491F-36E1-445C-8724-154BCA3CEF23.jpg",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -288,7 +288,10 @@
           "settings": {
             "show_powered_by": true,
             "font_size": "0.75rem",
-            "case": "none"
+            "case": "none",
+            "brand_text": "",
+            "brand_link": "",
+            "brand_logo_height": 1.5
           },
           "blocks": {}
         },
