@@ -442,6 +442,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
+            "image": "shopify://shop_images/84834d8b-64af-476c-abde-67bf4f1cf311.jpg",
             "link": "",
             "video_loop": true,
             "video_autoplay": true,
