@@ -337,7 +337,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Made with care</p>",
+                            "text": "<p>Feito com cuidado</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -420,7 +420,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Great value</p>",
+                            "text": "<p>Ótimo valor</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -549,7 +549,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Elegant design</p>",
+                            "text": "<p>Design elegante</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -632,7 +632,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Quality materials</p>",
+                            "text": "<p>Materiais de qualidade</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -694,7 +694,7 @@
                 "accordion_row_VyFryh": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Details",
+                    "heading": "Detalhes",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -703,7 +703,7 @@
                     "text_McjMWz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>This product is crafted with quality materials to ensure durability and performance. Designed with your convenience in mind, it seamlessly fits into your everyday life.</p>",
+                        "text": "<p>Este produto é fabricado com materiais de qualidade para garantir durabilidade e desempenho. Pensado para a tua comodidade, integra-se facilmente no teu dia a dia.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -733,7 +733,7 @@
                 "accordion_row_aaFerA": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping & Returns",
+                    "heading": "Envios e Devoluções",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -742,7 +742,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We strive to process and ship all orders in a timely manner, working diligently to ensure that your items are on their way to you as soon as possible. </p><p>We are committed to ensuring a positive shopping experience for all our customers. If for any reason you wish to return an item, we invite you to reach out to our team for assistance, and we will evaluate every return request with care and consideration.</p>",
+                        "text": "<p>Esforçamo-nos por processar e enviar todas as encomendas com rapidez, trabalhando para que os teus artigos sigam para ti o mais cedo possível. </p><p>Estamos empenhados em garantir uma experiência de compra positiva a todos os nossos clientes. Se por algum motivo quiseres devolver um artigo, convidamos-te a contactar a nossa equipa, e avaliaremos cada pedido de devolução com cuidado e atenção.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -899,7 +899,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<p>Shop The Full Collection</p>",
+                "text": "<p>Ver toda a coleção</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",

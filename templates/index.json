@@ -491,7 +491,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>O nosso catelogo</h2>",
+                "text": "<h2>O nosso catálogo</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -516,7 +516,7 @@
             "text_jxGhdJ": {
               "type": "text",
               "settings": {
-                "text": "<p>Objects that partner with your digital tools so you can focus on your most important work.</p>",
+                "text": "<p>Produtos selecionados para cuidares do teu carro com a qualidade de um profissional.</p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
@@ -541,7 +541,7 @@
             "button_zg4nUF": {
               "type": "button",
               "settings": {
-                "label": "Shop Now",
+                "label": "Comprar agora",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -621,7 +621,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h2>Shop by Collection</h2>",
+                "text": "<h2>Compra por coleção</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -756,13 +756,13 @@
         "color_scheme": "",
         "border_width": 3,
         "label": "",
-        "heading": "See the Difference",
+        "heading": "Vê a diferença",
         "subheading": "",
         "before_image": "shopify://shop_images/Car_Being_Washed.jpg",
-        "before_label": "Before",
+        "before_label": "Antes",
         "after_image": "shopify://shop_images/Cambridge_Auto_Detailing_Photo.jpg",
-        "after_label": "After",
-        "subtext": "Drag the slider to see our professional detailing results."
+        "after_label": "Depois",
+        "subtext": "Arrasta o cursor para veres os resultados do nosso detailing profissional."
       }
     }
   },
