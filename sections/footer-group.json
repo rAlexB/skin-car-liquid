@@ -19,7 +19,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/91599a07-3b31-49cf-82cd-64ceae9a783e.jpg",
+            "image": "shopify://shop_images/FCB1491F-36E1-445C-8724-154BCA3CEF23.jpg",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -242,11 +242,11 @@
               "type": "social-links",
               "name": "t:names.social_media_links",
               "settings": {
-                "facebook_url": "https://facebook.com",
-                "instagram_url": "https://instagram.com",
+                "facebook_url": "",
+                "instagram_url": "https://www.instagram.com/skin_car_detailing",
                 "youtube_url": "",
-                "tiktok_url": "https://tiktok.com",
-                "twitter_url": "https://x.com",
+                "tiktok_url": "https://www.tiktok.com/@skin.car0",
+                "twitter_url": "",
                 "threads_url": "",
                 "linkedin_url": "",
                 "bluesky_url": "",
@@ -286,9 +286,13 @@
         "copyright": {
           "type": "footer-copyright",
           "settings": {
-            "show_powered_by": true,
+            "show_powered_by": false,
             "font_size": "0.75rem",
-            "case": "none"
+            "case": "none",
+            "brand_image": "shopify://shop_images/visium_logo_white.png",
+            "brand_text": ". Empowered by",
+            "brand_link": "",
+            "brand_logo_height": 1.5
           },
           "blocks": {}
         },
