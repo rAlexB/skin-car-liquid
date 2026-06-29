@@ -1,0 +1,114 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "Title",
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "page-content"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "gap": 24,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 24
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Como devo lavar o meu carro sem riscar a pintura?",
+            "answer": "<p>Usa o método dos dois baldes (um com champô, outro só com água para enxaguar a luva), uma luva de microfibra de qualidade e lava sempre de cima para baixo. Seca com uma toalha de microfibra macia em vez de deixar secar ao ar.</p>",
+            "open_by_default": true
+          }
+        },
+        "q2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Com que frequência devo aplicar cera ou selante?",
+            "answer": "<p>Para a maioria dos carros, recomendamos reaplicar a cada 2 a 3 meses. Se usares um selante ou revestimento cerâmico, a proteção dura bastante mais — podes esticar até 6 meses ou mais, dependendo da exposição ao sol e da lavagem.</p>",
+            "open_by_default": false
+          }
+        },
+        "q3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Os vossos produtos são seguros para qualquer tipo de pintura?",
+            "answer": "<p>Sim. Todos os nossos produtos têm pH equilibrado e são seguros para pinturas com verniz, mate e revestimentos cerâmicos. Em caso de dúvida, testa sempre primeiro numa zona pouco visível.</p>",
+            "open_by_default": false
+          }
+        },
+        "q4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Quanto tempo demora a entrega?",
+            "answer": "<p>As encomendas são processadas em 24 a 48 horas úteis. Depois disso, a entrega em Portugal Continental demora normalmente 1 a 3 dias úteis. Recebes sempre um código de seguimento por email.</p>",
+            "open_by_default": false
+          }
+        },
+        "q5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Posso devolver um produto se não ficar satisfeito?",
+            "answer": "<p>Claro. Tens 14 dias após a receção para devolver qualquer produto não utilizado. Basta entrares em contacto connosco e tratamos de tudo contigo.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "margin_top": 1,
+        "margin_bottom": 4,
+        "color_scheme": "scheme-2",
+        "heading": "",
+        "subheading": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq"
+  ]
+}

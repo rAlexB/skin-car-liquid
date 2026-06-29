@@ -1,0 +1,351 @@
+{% comment %}
+  FAQ / Help accordion section.
+
+  Each block is a question + answer "drawer" built on a native <details> element:
+  click the question to expand the answer, which pushes the following items down.
+
+  Brand styling (skin-car):
+  - Collapsed question rectangle uses the dark-navy brand colour.
+  - On hover the rectangle turns the light brand blue.
+  - The drawers force the `.color-scheme-1` palette (brand navy bg / off-white text /
+    light-blue primary) so the look is consistent regardless of the section's own
+    background scheme. The section background uses the merchant-chosen colour scheme.
+{% endcomment %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ section.settings.margin_top }}rem;
+    margin-bottom: {{ section.settings.margin_bottom }}rem;
+  }
+{% endstyle %}
+
+<div class="faq color-{{ section.settings.color_scheme }}">
+  <div class="faq__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="faq__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="faq__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="faq__list">
+        {%- for block in section.blocks -%}
+          <details
+            class="faq__item color-scheme-1"
+            {% if block.settings.open_by_default %}open{% endif %}
+            {{ block.shopify_attributes }}
+          >
+            <summary class="faq__question">
+              <span class="faq__question-text">{{ block.settings.question }}</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg
+                  class="faq__icon-svg"
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  focusable="false"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </summary>
+            <div class="faq__answer">
+              <div class="faq__answer-inner rte">{{ block.settings.answer }}</div>
+            </div>
+          </details>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .faq {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    padding-inline: var(--page-margin);
+    padding-block: 4.5rem;
+  }
+
+  .faq__inner {
+    max-width: 52rem;
+    margin-inline: auto;
+  }
+
+  .faq__heading {
+    text-align: center;
+    color: var(--color-foreground);
+    margin: 0;
+  }
+
+  .faq__subheading {
+    text-align: center;
+    color: var(--color-foreground-muted, var(--color-foreground));
+    margin: 0.75rem auto 0;
+    max-width: 40rem;
+    line-height: 1.6;
+  }
+
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+    /* Allow height keyword (auto) to be animated when a drawer opens. */
+    interpolate-size: allow-keywords;
+  }
+
+  .faq__item {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    transition: background-color var(--animation-speed, 0.2s) var(--animation-easing, ease);
+  }
+
+  /* Question rectangle (the clickable summary). */
+  .faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 1.15rem 1.35rem;
+    margin: 0;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    color: var(--color-foreground);
+    background-color: transparent;
+    transition: background-color var(--animation-speed, 0.2s) var(--animation-easing, ease),
+      color var(--animation-speed, 0.2s) var(--animation-easing, ease);
+  }
+
+  .faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Hover → light brand blue rectangle. */
+  .faq__question:hover {
+    background-color: var(--color-primary);
+    color: var(--color-primary-button-text);
+  }
+
+  .faq__question:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -2px;
+  }
+
+  .faq__question-text {
+    flex: 1 1 auto;
+  }
+
+  /* Down-chevron icon, flips to an up-chevron when the drawer is open. */
+  .faq__icon {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--animation-speed, 0.25s) var(--animation-easing, ease);
+  }
+
+  .faq__item[open] .faq__icon {
+    transform: rotate(180deg);
+  }
+
+  /* Answer reveal — native <details> pushes following items down; the
+     ::details-content animation makes that expansion smooth. */
+  .faq__answer {
+    overflow: hidden;
+  }
+
+  .faq__item::details-content {
+    block-size: 0;
+    overflow: hidden;
+    opacity: 0;
+    interpolate-size: allow-keywords;
+    transition: content-visibility var(--animation-speed, 0.3s) allow-discrete,
+      opacity var(--animation-speed, 0.3s) var(--animation-easing, ease),
+      block-size var(--animation-speed, 0.3s) var(--animation-easing, ease);
+  }
+
+  /* Don't animate opens that aren't a direct user interaction (e.g. an
+     "open by default" drawer expanding on page load). */
+  .faq__item:not(:focus-within)::details-content {
+    transition: none;
+  }
+
+  .faq__item[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+
+    @starting-style {
+      block-size: 0;
+      opacity: 0;
+    }
+  }
+
+  .faq__answer-inner {
+    padding: 0 1.35rem 1.35rem;
+    line-height: 1.65;
+    color: var(--color-foreground);
+  }
+
+  .faq__answer-inner > :first-child {
+    margin-top: 0;
+  }
+
+  .faq__answer-inner > :last-child {
+    margin-bottom: 0;
+  }
+
+  .faq__answer-inner a {
+    color: var(--color-primary-button-text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .faq {
+      padding-block: 3rem;
+    }
+
+    .faq__question {
+      font-size: 1rem;
+      padding: 1rem 1.1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq__item,
+    .faq__question,
+    .faq__icon,
+    .faq__item::details-content {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top margin",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom margin",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Perguntas Frequentes"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Tudo o que precisas de saber sobre o cuidado do teu carro."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "A tua pergunta aqui?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Escreve aqui a resposta para ajudar os teus clientes.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_by_default",
+          "label": "Open by default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Como devo lavar o meu carro sem riscar a pintura?",
+            "answer": "<p>Usa o método dos dois baldes (um com champô, outro só com água para enxaguar a luva), uma luva de microfibra de qualidade e lava sempre de cima para baixo. Seca com uma toalha de microfibra macia em vez de deixar secar ao ar.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Com que frequência devo aplicar cera ou selante?",
+            "answer": "<p>Para a maioria dos carros, recomendamos reaplicar a cada 2 a 3 meses. Se usares um selante ou revestimento cerâmico, a proteção dura bastante mais — podes esticar até 6 meses ou mais, dependendo da exposição ao sol e da lavagem.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Os vossos produtos são seguros para qualquer tipo de pintura?",
+            "answer": "<p>Sim. Todos os nossos produtos têm pH equilibrado e são seguros para pinturas com verniz, mate e revestimentos cerâmicos. Em caso de dúvida, testa sempre primeiro numa zona pouco visível.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Quanto tempo demora a entrega?",
+            "answer": "<p>As encomendas são processadas em 24 a 48 horas úteis. Depois disso, a entrega em Portugal Continental demora normalmente 1 a 3 dias úteis. Recebes sempre um código de seguimento por email.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Posso devolver um produto se não ficar satisfeito?",
+            "answer": "<p>Claro. Tens 14 dias após a receção para devolver qualquer produto não utilizado. Basta entrares em contacto connosco e tratamos de tudo contigo.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
