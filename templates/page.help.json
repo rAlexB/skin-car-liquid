@@ -109,8 +109,8 @@
       ],
       "settings": {
         "margin_top": 1,
-        "margin_bottom": 4,
-        "color_scheme": "scheme-1",
+        "margin_bottom": 0,
+        "color_scheme": "skin-car-schema",
         "heading": "",
         "subheading": ""
       }
