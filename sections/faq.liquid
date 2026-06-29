@@ -20,15 +20,19 @@
 {% endstyle %}
 
 <div class="faq color-{{ section.settings.color_scheme }}">
-  <div class="faq__inner">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="faq__heading">{{ section.settings.heading }}</h2>
-    {%- endif -%}
-    {%- if section.settings.subheading != blank -%}
-      <p class="faq__subheading">{{ section.settings.subheading }}</p>
-    {%- endif -%}
+  {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+    <div class="faq__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="faq__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="faq__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
 
-    {%- if section.blocks.size > 0 -%}
+  {%- if section.blocks.size > 0 -%}
+    <div class="faq__inner">
       <div class="faq__list">
         {%- for block in section.blocks -%}
           <details
@@ -64,8 +68,8 @@
           </details>
         {%- endfor -%}
       </div>
-    {%- endif -%}
-  </div>
+    </div>
+  {%- endif -%}
 </div>
 
 {% stylesheet %}
@@ -81,16 +85,24 @@
     margin-inline: auto;
   }
 
+  /* Heading sits flush to the page margin at full page width — left-aligned
+     like the catalog/collection header, not aligned with the card column. */
+  .faq__header {
+    max-width: var(--page-width);
+    margin-inline: auto;
+    margin-bottom: 2.5rem;
+  }
+
   .faq__heading {
-    text-align: center;
+    text-align: left;
     color: var(--color-foreground);
     margin: 0;
   }
 
   .faq__subheading {
-    text-align: center;
+    text-align: left;
     color: var(--color-foreground-muted, var(--color-foreground));
-    margin: 0.75rem auto 0;
+    margin: 0.75rem 0 0;
     max-width: 40rem;
     line-height: 1.6;
   }
@@ -99,7 +111,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    margin-top: 2.5rem;
     /* Allow height keyword (auto) to be animated when a drawer opens. */
     interpolate-size: allow-keywords;
   }
@@ -146,6 +157,18 @@
     outline-offset: -2px;
   }
 
+  /* Open → the whole card (question + answer) turns the light brand blue. */
+  .faq__item[open] {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-primary-button-text);
+  }
+
+  .faq__item[open] .faq__question,
+  .faq__item[open] .faq__answer-inner {
+    color: var(--color-primary-button-text);
+  }
+
   .faq__question-text {
     flex: 1 1 auto;
   }
@@ -167,6 +190,8 @@
      ::details-content animation makes that expansion smooth. */
   .faq__answer {
     overflow: hidden;
+    /* Divider between the question and the answer (only visible when open). */
+    border-top: 1px solid color-mix(in srgb, var(--color-primary-button-text) 30%, transparent);
   }
 
   .faq__item::details-content {
@@ -196,7 +221,7 @@
   }
 
   .faq__answer-inner {
-    padding: 0 1.35rem 1.35rem;
+    padding: 1.35rem 1.35rem 1.35rem;
     line-height: 1.65;
     color: var(--color-foreground);
   }
