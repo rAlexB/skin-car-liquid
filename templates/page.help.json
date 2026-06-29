@@ -18,7 +18,7 @@
           "settings": {
             "text": "<h1>{{ closest.page.title }}</h1>",
             "width": "100%",
-            "max_width": "narrow",
+            "max_width": "normal",
             "alignment": "left",
             "type_preset": "h1",
             "font": "var(--font-body--family)",
@@ -37,10 +37,16 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
         }
       },
       "block_order": [
-        "heading"
+        "heading",
+        "page-content"
       ],
       "settings": {
         "content_direction": "column",
