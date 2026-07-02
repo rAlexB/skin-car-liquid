@@ -547,6 +547,53 @@
         "padding-block-end": 0
       }
     },
+    "stats_highlight_kR7mQ2": {
+      "type": "stats-highlight",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "prefix": "+",
+            "value": "300",
+            "suffix": "",
+            "label": "Clientes satisfeitos"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "value": "98",
+            "suffix": "%",
+            "label": "Recomendariam a amigos"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "prefix": "+",
+            "value": "4",
+            "suffix": "",
+            "label": "Anos de experiência"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "name": "Stats highlight",
+      "settings": {
+        "margin_top": 5,
+        "margin_bottom": 0,
+        "color_scheme": "scheme-1",
+        "heading": "Confiança que se mede em números",
+        "subheading": "O que o cuidado certo faz pela preservação  do teu carro.",
+        "count_duration": 2000,
+        "show_dividers": true
+      }
+    },
     "collection_list_xpBxCm": {
       "type": "collection-list",
       "blocks": {
@@ -735,49 +782,6 @@
         "after_label": "Depois",
         "subtext": "Arrasta o cursor para veres os resultados do nosso detailing profissional."
       }
-    },
-    "stats_highlight_kR7mQ2": {
-      "type": "stats-highlight",
-      "name": "Stats highlight",
-      "settings": {
-        "margin_top": 4,
-        "margin_bottom": 4,
-        "color_scheme": "scheme-1",
-        "heading": "Confiança que se mede em números",
-        "subheading": "O que o cuidado certo faz pela pintura do teu carro.",
-        "count_duration": 2000,
-        "show_dividers": true
-      },
-      "blocks": {
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "prefix": "+",
-            "value": "5000",
-            "suffix": "",
-            "label": "Clientes satisfeitos"
-          }
-        },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "prefix": "",
-            "value": "98",
-            "suffix": "%",
-            "label": "Recomendariam a amigos"
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
-            "prefix": "+",
-            "value": "15",
-            "suffix": "",
-            "label": "Anos de experiência"
-          }
-        }
-      },
-      "block_order": ["stat_1", "stat_2", "stat_3"]
     }
   },
   "order": [
