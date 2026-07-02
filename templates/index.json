@@ -122,37 +122,10 @@
               "block_order": [
                 "text_qXpKVG"
               ]
-            },
-            "text_ebNxhf": {
-              "type": "text",
-              "name": "Text",
-              "settings": {
-                "text": "<p>O único sítio para tudo sobre a limpeza e cuidado do teu carro.</p>",
-                "width": "fit-content",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-primary--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             }
           },
           "block_order": [
-            "group_U86Qji",
-            "text_ebNxhf"
+            "group_U86Qji"
           ]
         }
       },
