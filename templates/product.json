@@ -337,7 +337,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Feito com cuidado</p>",
+                            "text": "<p>{{ closest.product.metafields.custom.ferramentas_necessarias.value }}</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -409,7 +409,7 @@
                           "type": "icon",
                           "name": "t:names.icon",
                           "settings": {
-                            "icon": "price_tag",
+                            "icon": "washing",
                             "width": 24,
                             "link": "",
                             "open_in_new_tab": false
@@ -420,7 +420,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Ótimo valor</p>",
+                            "text": "<p>{{ closest.product.metafields.produto.modo_de_uso.value }}</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -538,7 +538,7 @@
                           "type": "icon",
                           "name": "t:names.icon",
                           "settings": {
-                            "icon": "washing",
+                            "icon": "box",
                             "width": 24,
                             "link": "",
                             "open_in_new_tab": false
@@ -549,7 +549,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Design elegante</p>",
+                            "text": "<p>{{ closest.product.metafields.custom.modo_de_aplicacao.value }}</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -632,7 +632,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Materiais de qualidade</p>",
+                            "text": "<p></p><p>{{ closest.product.metafields.custom.ambiente_de_uso | metafield_text }}</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
