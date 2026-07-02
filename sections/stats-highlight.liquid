@@ -1,0 +1,321 @@
+{% comment %}
+  Stats / highlight section.
+
+  A row of stat "columns", each stacking a big NUMBER over a small LABEL
+  (heading/description). The numbers count up from 0 the first time the section
+  scrolls into view — see assets/stats-counter.js. Everything degrades to the
+  final value with JS off or when the visitor prefers reduced motion.
+
+  Merchant enters each figure as a plain number (dot for decimals, no thousands
+  separators) plus an optional prefix ("+", "€") and suffix ("%", "k"). The
+  count-up formats the digits for the store locale, so 5000 renders as 5.000.
+
+  Brand styling (skin-car): numbers use the brand heading font, square corners,
+  and the section's chosen colour scheme. Keep this portable — no shop-specific
+  handles or media references.
+{% endcomment %}
+
+<script
+  src="{{ 'stats-counter.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ section.settings.margin_top }}rem;
+    margin-bottom: {{ section.settings.margin_bottom }}rem;
+  }
+{% endstyle %}
+
+<div class="stats color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+    <div class="stats__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="stats__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="stats__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <stats-counter
+      class="stats__inner"
+      data-duration="{{ section.settings.count_duration }}"
+      data-locale="{{ request.locale.iso_code }}"
+      {% unless section.settings.show_dividers %}data-no-dividers{% endunless %}
+    >
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign raw = block.settings.value | strip
+          assign decimals = 0
+          assign parts = raw | split: '.'
+          if parts.size > 1
+            assign decimals = parts.last | size
+          endif
+        -%}
+        <div class="stats__item" {{ block.shopify_attributes }}>
+          <div
+            class="stats__value"
+            data-stat-value="{{ raw }}"
+            data-stat-decimals="{{ decimals }}"
+          >
+            {%- if block.settings.prefix != blank -%}
+              <span class="stats__affix stats__prefix">{{ block.settings.prefix }}</span>
+            {%- endif -%}
+            <span class="stats__number" data-stat-number>{{ raw }}</span>
+            {%- if block.settings.suffix != blank -%}
+              <span class="stats__affix stats__suffix">{{ block.settings.suffix }}</span>
+            {%- endif -%}
+          </div>
+          {%- if block.settings.label != blank -%}
+            <p class="stats__label">{{ block.settings.label }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </stats-counter>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .stats {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    padding-block: 4.5rem;
+  }
+
+  .stats__header {
+    max-width: var(--page-width);
+    margin-inline: auto;
+    padding-inline: var(--page-margin);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .stats__heading {
+    color: var(--color-foreground);
+    margin: 0;
+  }
+
+  .stats__subheading {
+    color: var(--color-foreground-muted, var(--color-foreground));
+    margin: 0.75rem auto 0;
+    max-width: 42rem;
+    line-height: 1.6;
+  }
+
+  /* The row of stat columns. */
+  .stats__inner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem 1rem;
+    max-width: var(--page-width);
+    margin-inline: auto;
+    padding-inline: var(--page-margin);
+  }
+
+  /* One column: big number over small label, centred. Equal-width flex tracks
+     keep the numbers centred (no neighbour shift) as digits change while counting. */
+  .stats__item {
+    flex: 1 1 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 0.5rem;
+    padding-inline: 1rem;
+  }
+
+  .stats__value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.15em;
+    font-family: var(--font-h1--family, var(--font-brand));
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--color-foreground);
+    font-size: clamp(2.75rem, 7vw, 4.5rem);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stats__affix {
+    font-size: 0.6em;
+    font-weight: 600;
+  }
+
+  .stats__label {
+    margin: 0;
+    max-width: 16rem;
+    color: var(--color-foreground-muted, var(--color-foreground));
+    font-size: var(--font-size--md, 1rem);
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  /* Slim vertical separators between columns (desktop only, opt-out via toggle). */
+  @media screen and (min-width: 750px) {
+    .stats__inner:not([data-no-dividers]) .stats__item + .stats__item {
+      border-inline-start: 1px solid var(--color-border);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .stats {
+      padding-block: 3rem;
+    }
+
+    .stats__inner {
+      gap: 2.5rem 1rem;
+    }
+
+    .stats__value {
+      font-size: clamp(2.25rem, 12vw, 3.25rem);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Stats highlight",
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top margin",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom margin",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Confiança que se mede em números"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "O que o cuidado certo faz pela pintura do teu carro."
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "count_duration",
+      "label": "Count-up duration",
+      "min": 500,
+      "max": 4000,
+      "step": 100,
+      "unit": "ms",
+      "default": 2000
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dividers",
+      "label": "Show dividers between columns",
+      "default": true
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "prefix",
+          "label": "Prefix (optional)",
+          "info": "Shown before the number, e.g. + or €",
+          "default": "+"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Number",
+          "info": "Digits only. Use a dot for decimals (e.g. 98.5). No thousands separators.",
+          "default": "5000"
+        },
+        {
+          "type": "text",
+          "id": "suffix",
+          "label": "Suffix (optional)",
+          "info": "Shown after the number, e.g. % or k"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Clientes satisfeitos"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stats highlight",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "prefix": "+",
+            "value": "5000",
+            "suffix": "",
+            "label": "Clientes satisfeitos"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "value": "98",
+            "suffix": "%",
+            "label": "Recomendariam a amigos"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "prefix": "+",
+            "value": "15",
+            "suffix": "",
+            "label": "Anos de experiência"
+          }
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  }
+}
+{% endschema %}
