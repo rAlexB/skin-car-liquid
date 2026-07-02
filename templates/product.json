@@ -800,6 +800,26 @@
         "padding-block-end": 32
       }
     },
+    "before_after_slider_RmrPkJ": {
+      "type": "before-after-slider",
+      "name": "t:names.before_after_slider",
+      "settings": {
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "max_width": 720,
+        "aspect_ratio": "4 / 3",
+        "initial_position": 50,
+        "border_radius": 0,
+        "color_scheme": "",
+        "border_width": 3,
+        "label": "",
+        "heading": "O produto em ação",
+        "subheading": "",
+        "before_label": "Before",
+        "after_label": "After",
+        "subtext": "Drag the slider to see our professional detailing results."
+      }
+    },
     "product_list_zR9Cym": {
       "type": "product-list",
       "blocks": {
@@ -1042,6 +1062,7 @@
   },
   "order": [
     "main",
+    "before_after_slider_RmrPkJ",
     "product_list_zR9Cym"
   ]
 }
