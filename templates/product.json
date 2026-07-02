@@ -326,7 +326,7 @@
                           "type": "icon",
                           "name": "t:names.icon",
                           "settings": {
-                            "icon": "heart",
+                            "icon": "ruler",
                             "width": 24,
                             "link": "",
                             "open_in_new_tab": false
@@ -538,7 +538,7 @@
                           "type": "icon",
                           "name": "t:names.icon",
                           "settings": {
-                            "icon": "plant",
+                            "icon": "washing",
                             "width": 24,
                             "link": "",
                             "open_in_new_tab": false
