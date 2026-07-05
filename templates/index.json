@@ -742,16 +742,18 @@
       "settings": {
         "margin_top": 0,
         "margin_bottom": 0,
-        "max_width": 720,
-        "aspect_ratio": "16 / 9",
-        "initial_position": 50,
+        "max_width": 760,
+        "aspect_ratio": "4 / 3",
+        "initial_position": 90,
         "border_radius": 0,
         "color_scheme": "",
         "border_width": 3,
         "label": "",
-        "heading": "Vê a diferença",
+        "heading": "Como o seu veículo pode ficar",
         "subheading": "Limpeza aplicada com produtos vendidos na loja",
+        "before_image": "shopify://shop_images/WhatsApp_Image_4446.jpg",
         "before_label": "Antes",
+        "after_image": "shopify://shop_images/IMG_4447_from_WhatsApp.jpg",
         "after_label": "Depois",
         "subtext": "Arrasta o cursor para veres os resultados do nosso detailing profissional."
       }
