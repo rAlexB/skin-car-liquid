@@ -415,7 +415,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/84834d8b-64af-476c-abde-67bf4f1cf311.jpg",
+            "image": "shopify://shop_images/WhatsApp_Image_1434.heic",
             "link": "",
             "video_loop": true,
             "video_autoplay": true,
@@ -437,7 +437,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>O nosso catálogo</h2>",
+                "text": "<h2>Mais que um catálogo</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -462,7 +462,7 @@
             "text_jxGhdJ": {
               "type": "text",
               "settings": {
-                "text": "<p>Produtos selecionados para cuidares do teu carro com a qualidade de um profissional.</p>",
+                "text": "<p>Uma seleção compreensiva de produtos    comprovados para qualquer tipo de lavagem. </p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
@@ -487,7 +487,7 @@
             "button_zg4nUF": {
               "type": "button",
               "settings": {
-                "label": "Comprar agora",
+                "label": "Ver coleção",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -538,7 +538,7 @@
             "prefix": "",
             "value": "98",
             "suffix": "%",
-            "label": "Recomendariam a amigos"
+            "label": "dos Clientes recomendaram a nossa limpeza"
           }
         },
         "stat_3": {
@@ -562,7 +562,7 @@
         "margin_bottom": 0,
         "color_scheme": "scheme-1",
         "heading": "Confiança que se mede em números",
-        "subheading": "O que o cuidado certo faz pela preservação  do teu carro.",
+        "subheading": "Os números não mentem",
         "count_duration": 2000,
         "show_dividers": true
       }
