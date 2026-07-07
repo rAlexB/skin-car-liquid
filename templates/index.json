@@ -653,7 +653,7 @@
             "inherit_color_scheme": false,
             "color_scheme": "scheme-1",
             "border": "none",
-            "border_width": 1,
+            "border_width": 10,
             "border_opacity": 100,
             "border_radius": 3
           },
@@ -714,7 +714,8 @@
           "exterior-cleaning-category",
           "interior-cleaning-category",
           "koch-chemie",
-          "vonixx"
+          "vonixx",
+          "acessorios"
         ],
         "layout_type": "bento",
         "carousel_on_mobile": true,
