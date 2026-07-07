@@ -108,22 +108,22 @@
   },
   "blocks": {
     "contact_form": {
-      "name": "Name",
+      "name": "Nome",
       "email": "Email",
-      "phone": "Phone",
-      "comment": "Comment",
-      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
-      "error_heading": "Please adjust the following:"
+      "phone": "Telemóvel",
+      "comment": "Comentário",
+      "post_success": "Obrigado por nos contactar. Vamos entrar em contacto o mais rápido possível",
+      "error_heading": "Por favor ajuste o seguinte:"
     },
     "email_signup": {
       "label": "Email",
-      "placeholder": "Email address",
-      "success": "Thanks for subscribing!"
+      "placeholder": "Endereço de email",
+      "success": "Obrigado por subscreve!"
     },
-    "filter": "Filter",
-    "load_video": "Load video: {{ description }}",
-    "sold_out": "Sold out",
-    "payment_methods": "Payment methods",
+    "filter": "Filtro",
+    "load_video": "Carregar vídeo: {{ description }}",
+    "sold_out": "Esgotado",
+    "payment_methods": "Métodos de pagamento",
     "slider_label": "Slider"
   },
   "blogs": {
