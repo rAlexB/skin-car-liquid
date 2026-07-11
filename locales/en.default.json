@@ -264,7 +264,7 @@
     "search_results_view_all_button": "Ver tudo",
     "seller_note": "Instruções especiais ",
     "shipping_policy": "Custos de frête calculados na compra.",
-    "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+    "shipping_policy_html": "<a href=\"{{ link }}\">Envios</a> calculados no checkout",
     "store_owner_link_html": "Are you the store owner? <a href=\"{{ link }}\">Log in here</a>",
     "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
     "taxes_at_checkout_shipping_at_checkout_with_policy_without_discounts_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
