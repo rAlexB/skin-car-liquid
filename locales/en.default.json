@@ -304,7 +304,7 @@
     "product_custom_property_character_count": "{{ used_chars }}/{{ max_chars }} characters used"
   },
   "fields": {
-    "separator": "to"
+    "separator": "Para"
   },
   "gift_cards": {
     "issued": {
