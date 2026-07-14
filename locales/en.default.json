@@ -376,6 +376,11 @@
         "price_descending": "Preço Descendente",
         "relevance": "Relevância "
       }
+    },
+    "checkout": {
+      "stock": {
+        "empty_cart_label": "Your cart is empty"
+      }
     }
   }
 }
