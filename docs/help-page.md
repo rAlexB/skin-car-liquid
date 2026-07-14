@@ -342,18 +342,26 @@ to host the page **header** ("Ajuda").
    On Help the scheme is "" (empty), so it inherits :root = scheme-1 (navy). → §10 #}
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 
-<div class="section page-width-content color-{{ section.settings.color_scheme }}">
+<div class="section section--page-width main-page color-{{ section.settings.color_scheme }}">
   <div
     class="spacing-style layout-panel-flex layout-panel-flex--column section-content-wrapper mobile-column"
     style="
       {% render 'layout-panel-style', settings: section.settings %}   {# flex direction/gap/alignment → §9.6 #}
-      {% render 'spacing-style',      settings: section.settings %}   {# the 40px/24px padding → §9.5 #}
+      {% render 'spacing-style',      settings: section.settings %}   {# the 24px/24px padding → §9.5 #}
     "
   >
     {% content_for 'blocks' %}   {# ★ the heading + page-content blocks render HERE → §7 ★ #}
   </div>
 </div>
 ```
+
+> **Width note:** this section used to use the `page-width-content` class, which shrank the
+> whole section to a narrow, centered 42rem reading column — so the "Ajuda" title sat inset
+> from the page edge. It now uses `section--page-width` (the same central grid column that
+> collection headers use), so the title aligns with the page's left margin like on a
+> collection page. To keep long page-body text readable at that width, the section's
+> `{% stylesheet %}` caps the `page-content` block (`.main-page .rte`) at
+> `--normal-content-width` (42rem).
 
 Two things a web dev should note:
 

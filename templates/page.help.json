@@ -52,7 +52,7 @@
         "content_direction": "column",
         "gap": 24,
         "color_scheme": "",
-        "padding-block-start": 40,
+        "padding-block-start": 24,
         "padding-block-end": 24
       }
     },

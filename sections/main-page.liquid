@@ -1,7 +1,7 @@
 
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
-<div class="section page-width-content color-{{ section.settings.color_scheme }}">
+<div class="section section--page-width main-page color-{{ section.settings.color_scheme }}">
   <div
     class="
       spacing-style
@@ -18,6 +18,14 @@
     {% content_for 'blocks' %}
   </div>
 </div>
+
+{% stylesheet %}
+  /* The section spans the page width (like collection headers) so headings sit
+     at the page's left edge, but body copy keeps a readable reading column. */
+  .main-page .rte {
+    max-width: var(--normal-content-width);
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
