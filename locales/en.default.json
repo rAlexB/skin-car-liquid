@@ -367,7 +367,8 @@
         "za": "Alfabeticamente, Z a A",
         "date_ascending": "Data Ascendente",
         "date_descending": "Data Descendente",
-        "most_relevant": "Mais relevante"
+        "most_relevant": "Mais relevante",
+        "manual": "Destaques"
       }
     },
     "search": {
