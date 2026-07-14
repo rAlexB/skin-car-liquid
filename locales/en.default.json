@@ -361,13 +361,20 @@
     "collections": {
       "sorting": {
         "price_ascending": "Preço Ascendente",
-        "price_descending": "Preço Descendente"
+        "price_descending": "Preço Descendente",
+        "best_selling": "Mais vendidos",
+        "az": "Alfabeticamente, A a Z",
+        "za": "Alfabeticamente, Z a A",
+        "date_ascending": "Data Ascendente",
+        "date_descending": "Data Descendente",
+        "most_relevant": "Mais relevante"
       }
     },
     "search": {
       "sorting": {
         "price_ascending": "Preço Ascendente",
-        "price_descending": "Preço Descendente"
+        "price_descending": "Preço Descendente",
+        "relevance": "Relevância "
       }
     }
   }
