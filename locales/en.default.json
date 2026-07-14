@@ -357,6 +357,18 @@
           "out_of_stock": "Fora de stock"
         }
       }
+    },
+    "collections": {
+      "sorting": {
+        "price_ascending": "Preço Ascendente",
+        "price_descending": "Preço Descendente"
+      }
+    },
+    "search": {
+      "sorting": {
+        "price_ascending": "Preço Ascendente",
+        "price_descending": "Preço Descendente"
+      }
     }
   }
 }
