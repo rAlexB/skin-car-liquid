@@ -348,5 +348,14 @@
       "default_title": "Título Padrão ",
       "sticky_add_to_cart": "Barra para adicionar ao carrinho rápida"
     }
+  },
+  "shopify": {
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "Em stock"
+        }
+      }
+    }
   }
 }
