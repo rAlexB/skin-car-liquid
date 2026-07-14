@@ -41,7 +41,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Precisas de uma limpeza ao teu carro?</p>",
+                "text": "<p>Seu carro precisa de uma limpeza?</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",

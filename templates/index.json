@@ -122,37 +122,10 @@
               "block_order": [
                 "text_qXpKVG"
               ]
-            },
-            "text_ebNxhf": {
-              "type": "text",
-              "name": "Text",
-              "settings": {
-                "text": "<p>O único sítio para tudo sobre a limpeza e cuidado do teu carro.</p>",
-                "width": "fit-content",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-primary--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             }
           },
           "block_order": [
-            "group_U86Qji",
-            "text_ebNxhf"
+            "group_U86Qji"
           ]
         }
       },
@@ -442,7 +415,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/84834d8b-64af-476c-abde-67bf4f1cf311.jpg",
+            "image": "shopify://shop_images/WhatsApp_Image_1434.heic",
             "link": "",
             "video_loop": true,
             "video_autoplay": true,
@@ -464,7 +437,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>O nosso catálogo</h2>",
+                "text": "<h2>Mais que um catálogo</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -489,7 +462,7 @@
             "text_jxGhdJ": {
               "type": "text",
               "settings": {
-                "text": "<p>Produtos selecionados para cuidares do teu carro com a qualidade de um profissional.</p>",
+                "text": "<p>Uma seleção compreensiva de produtos    comprovados para qualquer tipo de lavagem. </p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
@@ -514,7 +487,7 @@
             "button_zg4nUF": {
               "type": "button",
               "settings": {
-                "label": "Comprar agora",
+                "label": "Ver coleção",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -545,6 +518,53 @@
         "button_border_radius": 4,
         "padding-block-start": 0,
         "padding-block-end": 0
+      }
+    },
+    "stats_highlight_kR7mQ2": {
+      "type": "stats-highlight",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "prefix": "+",
+            "value": "300",
+            "suffix": "",
+            "label": "Clientes satisfeitos"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "prefix": "",
+            "value": "98",
+            "suffix": "%",
+            "label": "dos Clientes recomendaram a nossa limpeza"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "prefix": "+",
+            "value": "4",
+            "suffix": "",
+            "label": "Anos de experiência"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "name": "Stats highlight",
+      "settings": {
+        "margin_top": 5,
+        "margin_bottom": 0,
+        "color_scheme": "scheme-1",
+        "heading": "Confiança que se mede em números",
+        "subheading": "Os números não mentem",
+        "count_duration": 2000,
+        "show_dividers": true
       }
     },
     "collection_list_xpBxCm": {
@@ -633,7 +653,7 @@
             "inherit_color_scheme": false,
             "color_scheme": "scheme-1",
             "border": "none",
-            "border_width": 1,
+            "border_width": 10,
             "border_opacity": 100,
             "border_radius": 3
           },
@@ -694,7 +714,8 @@
           "exterior-cleaning-category",
           "interior-cleaning-category",
           "koch-chemie",
-          "vonixx"
+          "vonixx",
+          "acessorios"
         ],
         "layout_type": "bento",
         "carousel_on_mobile": true,
@@ -722,62 +743,21 @@
       "settings": {
         "margin_top": 0,
         "margin_bottom": 0,
-        "max_width": 720,
-        "aspect_ratio": "16 / 9",
-        "initial_position": 50,
+        "max_width": 760,
+        "aspect_ratio": "4 / 3",
+        "initial_position": 90,
         "border_radius": 0,
         "color_scheme": "",
         "border_width": 3,
         "label": "",
-        "heading": "Vê a diferença",
+        "heading": "Como o seu veículo pode ficar",
         "subheading": "Limpeza aplicada com produtos vendidos na loja",
+        "before_image": "shopify://shop_images/WhatsApp_Image_4446.jpg",
         "before_label": "Antes",
+        "after_image": "shopify://shop_images/IMG_4447_from_WhatsApp.jpg",
         "after_label": "Depois",
         "subtext": "Arrasta o cursor para veres os resultados do nosso detailing profissional."
       }
-    },
-    "stats_highlight_kR7mQ2": {
-      "type": "stats-highlight",
-      "name": "Stats highlight",
-      "settings": {
-        "margin_top": 4,
-        "margin_bottom": 4,
-        "color_scheme": "scheme-1",
-        "heading": "Confiança que se mede em números",
-        "subheading": "O que o cuidado certo faz pela pintura do teu carro.",
-        "count_duration": 2000,
-        "show_dividers": true
-      },
-      "blocks": {
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "prefix": "+",
-            "value": "5000",
-            "suffix": "",
-            "label": "Clientes satisfeitos"
-          }
-        },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "prefix": "",
-            "value": "98",
-            "suffix": "%",
-            "label": "Recomendariam a amigos"
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
-            "prefix": "+",
-            "value": "15",
-            "suffix": "",
-            "label": "Anos de experiência"
-          }
-        }
-      },
-      "block_order": ["stat_1", "stat_2", "stat_3"]
     }
   },
   "order": [

@@ -326,7 +326,7 @@
                           "type": "icon",
                           "name": "t:names.icon",
                           "settings": {
-                            "icon": "heart",
+                            "icon": "ruler",
                             "width": 24,
                             "link": "",
                             "open_in_new_tab": false
@@ -337,7 +337,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Feito com cuidado</p>",
+                            "text": "<p>{{ closest.product.metafields.custom.ferramentas_necessarias.value }}</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -409,7 +409,7 @@
                           "type": "icon",
                           "name": "t:names.icon",
                           "settings": {
-                            "icon": "price_tag",
+                            "icon": "washing",
                             "width": 24,
                             "link": "",
                             "open_in_new_tab": false
@@ -420,7 +420,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Ótimo valor</p>",
+                            "text": "<p>{{ closest.product.metafields.produto.modo_de_uso.value }}</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -538,7 +538,7 @@
                           "type": "icon",
                           "name": "t:names.icon",
                           "settings": {
-                            "icon": "plant",
+                            "icon": "box",
                             "width": 24,
                             "link": "",
                             "open_in_new_tab": false
@@ -549,7 +549,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Design elegante</p>",
+                            "text": "<p>{{ closest.product.metafields.custom.modo_de_aplicacao.value }}</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -632,7 +632,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Materiais de qualidade</p>",
+                            "text": "<p></p><p>{{ closest.product.metafields.custom.ambiente_de_uso | metafield_text }}</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -800,63 +800,24 @@
         "padding-block-end": 32
       }
     },
-    "section_NaqU9X": {
-      "type": "section",
-      "blocks": {
-        "video_PthMbP": {
-          "type": "video",
-          "name": "t:names.video",
-          "settings": {
-            "source": "uploaded",
-            "video_url": "",
-            "video_autoplay": false,
-            "video_loop": true,
-            "alt": "",
-            "custom_width": 100,
-            "custom_width_mobile": 100,
-            "aspect_ratio": "16/9",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "video_PthMbP"
-      ],
-      "name": "t:names.video_section",
+    "before_after_slider_RmrPkJ": {
+      "type": "before-after-slider",
+      "name": "t:names.before_after_slider",
       "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
-        "section_width": "full-width",
-        "section_height": "small",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "max_width": 720,
+        "aspect_ratio": "4 / 3",
+        "initial_position": 50,
         "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "color_scheme": "",
+        "border_width": 3,
+        "label": "",
+        "heading": "O produto em ação",
+        "subheading": "",
+        "before_label": "Before",
+        "after_label": "After",
+        "subtext": "Drag the slider to see our professional detailing results."
       }
     },
     "product_list_zR9Cym": {
@@ -1101,7 +1062,7 @@
   },
   "order": [
     "main",
-    "section_NaqU9X",
+    "before_after_slider_RmrPkJ",
     "product_list_zR9Cym"
   ]
 }
