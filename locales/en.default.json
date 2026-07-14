@@ -285,7 +285,7 @@
     "each_abbreviation": "ea",
     "price_at": "at",
     "price_range": "Price range",
-    "your_cart_is_empty": "Your cart is empty",
+    "your_cart_is_empty": "Seu carrinho está vazio",
     "product_count": "Product count",
     "errors": "Errors",
     "wrong_password": "Wrong password",
@@ -379,7 +379,7 @@
     },
     "checkout": {
       "stock": {
-        "empty_cart_label": "Your cart is empty"
+        "empty_cart_label": "Seu carrinho está vazio"
       }
     }
   }
