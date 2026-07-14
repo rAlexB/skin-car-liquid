@@ -353,7 +353,8 @@
     "filters": {
       "availability": {
         "value": {
-          "in_stock": "Em stock"
+          "in_stock": "Em stock",
+          "out_of_stock": "Fora de stock"
         }
       }
     }
