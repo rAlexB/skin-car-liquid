@@ -333,20 +333,20 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "Add to cart",
-      "adding_to_cart": "Adding...",
-      "added_to_cart": "Added to cart",
-      "add_to_cart_error": "Error adding to cart",
-      "quantity_error_max": "This item has a maximum of {{ maximum }}",
-      "sold_out": "Sold out",
-      "unavailable": "Unavailable",
-      "quantity": "Quantity",
-      "quantity_increments": "Increments of {{ increment }}",
-      "quantity_minimum": "Minimum of {{ minimum }}",
-      "quantity_maximum": "Maximum of {{ maximum }}",
-      "in_cart": "in cart",
-      "default_title": "Default Title",
-      "sticky_add_to_cart": "Quick add to cart bar"
+      "add_to_cart": "Adicionar ao carrinho",
+      "adding_to_cart": "A adicionar...",
+      "added_to_cart": "Adicionado ao carrinho",
+      "add_to_cart_error": "Erro ao adicionar ao carrinho",
+      "quantity_error_max": "TEste item tem um máximo de {{ maximum }}",
+      "sold_out": "Esgotado",
+      "unavailable": "Indesponível",
+      "quantity": "Quantidade",
+      "quantity_increments": "Incremento de {{ increment }}",
+      "quantity_minimum": "Mínimo de  {{ minimum }}",
+      "quantity_maximum": "Maximo de {{ maximum }}",
+      "in_cart": "No carrinho",
+      "default_title": "Título Padrão ",
+      "sticky_add_to_cart": "Barra para adicionar ao carrinho rápida"
     }
   }
 }
