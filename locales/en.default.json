@@ -178,21 +178,21 @@
     "featured_products": "Produtos em destaque",
     "filters": "Filtros",
     "grid_view": {
-      "default_view": "Default",
-      "grid_fieldset": "Column grid",
-      "single_item": "Single",
+      "default_view": "Padrão",
+      "grid_fieldset": "Grelha de colunas",
+      "single_item": "Único",
       "zoom_out": "Zoom out"
     },
     "inventory_low_stock_show_count": {
-      "one": "{{ count }} left",
-      "other": "{{ count }} left"
+      "one": "{{ count }} restante",
+      "other": "{{ count }} restantes"
     },
     "inventory_low_stock": "Stock baixo",
     "inventory_in_stock": "Em stock",
     "inventory_out_of_stock": "Fora de stock",
     "item_count": {
       "one": "{{ count }} item",
-      "other": "{{ count }} items"
+      "other": "{{ count }} Items"
     },
     "item_count_cutoff": "Mais que {{ count }} items",
     "language": "Língua",
@@ -203,9 +203,9 @@
     "page_placeholder_content": "Seleciona uma página para mostrar o seu contéudo",
     "pagination": {
       "nav_label": "Pagination",
-      "previous": "Previous",
-      "next": "Next",
-      "page": "Page {{ page }}"
+      "previous": "Anterior",
+      "next": "Próximo",
+      "page": "Página {{ page }}"
     },
     "pickup_available_at_html": "Recolha disponível em <b>{{ location }}</b>",
     "pickup_available_in": "Recolha disponível {{ pickup_time }}",
@@ -247,8 +247,8 @@
     "search_results_resource_pages": "Páginas",
     "search_results_resource_products": "Produtos",
     "search_results_resource_products_count": {
-      "one": "{{ count }} product",
-      "other": "{{ count }} products"
+      "one": "{{ count }} produto",
+      "other": "{{ count }} produtos"
     },
     "search_results_resource_queries": "Sugestões de pesquisa",
     "total_items": "Items totais",
@@ -257,15 +257,15 @@
     "view_cart": "Ver carrinho",
     "your_cart": "Seu carrinho",
     "items_added_to_cart": {
-      "one": "1 item added to cart",
-      "other": "{{ count }} items added to cart"
+      "one": "1 item adicionado ao carrinho",
+      "other": "{{ count }} items adicionados ao carrinho"
     },
     "search_results_view_all": "Ver tudo",
     "search_results_view_all_button": "Ver tudo",
     "seller_note": "Instruções especiais ",
     "shipping_policy": "Custos de frête calculados na compra.",
     "shipping_policy_html": "<a href=\"{{ link }}\">Envios</a> calculados no checkout",
-    "store_owner_link_html": "Are you the store owner? <a href=\"{{ link }}\">Log in here</a>",
+    "store_owner_link_html": "Are you the store owner? <a href=\"{{ link }}\">Inicie sessão aqui</a>",
     "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
     "taxes_at_checkout_shipping_at_checkout_with_policy_without_discounts_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
     "taxes_at_checkout_shipping_at_checkout_without_policy": "Taxes, discounts and shipping calculated at checkout.",
@@ -300,7 +300,7 @@
     "recipient_form_send_on_label": "Send on (optional)",
     "recipient_form_fields_visible": "Recipient form fields are now visible",
     "recipient_form_fields_hidden": "Recipient form fields are now hidden",
-    "recipient_form_error": "There was an error with the form submission",
+    "recipient_form_error": "Houve um erro com a submissão do formulário",
     "product_custom_property_character_count": "{{ used_chars }}/{{ max_chars }} characters used"
   },
   "fields": {
