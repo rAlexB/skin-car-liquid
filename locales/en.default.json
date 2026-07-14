@@ -379,7 +379,14 @@
     },
     "checkout": {
       "stock": {
-        "empty_cart_label": "Seu carrinho está vazio"
+        "empty_cart_label": "Seu carrinho está vazio",
+        "price_column_header": "Preço"
+      },
+      "general": {
+        "full_price": "Preço total:"
+      },
+      "order_summary": {
+        "price_label": "Preço"
       }
     }
   }
