@@ -321,15 +321,15 @@
     }
   },
   "placeholders": {
-    "password": "Password",
-    "search": "Search",
-    "product_title": "Product title",
-    "collection_title": "Collection title",
-    "blog_posts": "Blog posts",
-    "blog_post_title": "Title",
-    "blog_post_author": "Author",
-    "blog_post_date": "Date",
-    "blog_post_description": "An excerpt of your blog post's content"
+    "password": "Palavra-passe",
+    "search": "Pesquisa",
+    "product_title": "Título do produto",
+    "collection_title": "Título da coleção",
+    "blog_posts": "Posts de blog",
+    "blog_post_title": "Título",
+    "blog_post_author": "Autor",
+    "blog_post_date": "Data",
+    "blog_post_description": "Um excerto do conteúdo do seu blog"
   },
   "products": {
     "product": {
