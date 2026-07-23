@@ -703,7 +703,7 @@
                     "text_McjMWz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Este produto é fabricado com materiais de qualidade para garantir durabilidade e desempenho. Pensado para a tua comodidade, integra-se facilmente no teu dia a dia.</p>",
+                        "text": "<p>{{ closest.product.metafields.custom.modo_de_aplicacao.value }}</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
