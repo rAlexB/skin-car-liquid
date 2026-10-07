@@ -295,7 +295,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Livro de reclamações</p>",
+                "text": "<p><a href=\"https://www.livroreclamacoes.pt/inicio/\" target=\"_blank\" title=\"https://www.livroreclamacoes.pt/inicio/\">Livro de reclamações</a></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
