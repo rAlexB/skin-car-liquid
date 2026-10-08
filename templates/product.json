@@ -693,42 +693,14 @@
               "blocks": {
                 "accordion_row_VyFryh": {
                   "type": "_accordion-row",
+                  "disabled": true,
                   "settings": {
                     "heading": "Detalhes",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
-                  "blocks": {
-                    "text_McjMWz": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>{{ closest.product.metafields.custom.como_aplicar_usar | metafield_tag }}</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-primary--family)",
-                        "font_size": "",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_McjMWz"
-                  ]
+                  "blocks": {}
                 },
                 "accordion_row_aaFerA": {
                   "type": "_accordion-row",
@@ -742,7 +714,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Esforçamo-nos por processar e enviar todas as encomendas com rapidez, trabalhando para que os teus artigos sigam para ti o mais cedo possível. </p><p>Estamos empenhados em garantir uma experiência de compra positiva a todos os nossos clientes. Se por algum motivo quiseres devolver um artigo, convidamos-te a contactar a nossa equipa, e avaliaremos cada pedido de devolução com cuidado e atenção.</p>",
+                        "text": "<p>Esforçamo-nos por processar e enviar todas as encomendas com rapidez, trabalhando para que os teus artigos sigam para ti o mais cedo possível.&nbsp;</p><p>Estamos empenhados em garantir uma experiência de compra positiva a todos os nossos clientes. Se por algum motivo quiseres devolver um artigo, convidamos-te a contactar a nossa equipa, e avaliaremos cada pedido de devolução com cuidado e atenção.</p><p>Para mais informações consulte <a href=\"/policies/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">Envios</a> e <a href=\"/policies/refund-policy\" target=\"_blank\" title=\"Refund Policy\">Devoluções.&nbsp;</a></p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -798,26 +770,6 @@
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 32
-      }
-    },
-    "before_after_slider_RmrPkJ": {
-      "type": "before-after-slider",
-      "name": "t:names.before_after_slider",
-      "settings": {
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "max_width": 720,
-        "aspect_ratio": "4 / 3",
-        "initial_position": 50,
-        "border_radius": 0,
-        "color_scheme": "",
-        "border_width": 3,
-        "label": "",
-        "heading": "O produto em ação",
-        "subheading": "",
-        "before_label": "Before",
-        "after_label": "After",
-        "subtext": "Drag the slider to see our professional detailing results."
       }
     },
     "product_list_zR9Cym": {
@@ -1062,7 +1014,6 @@
   },
   "order": [
     "main",
-    "before_after_slider_RmrPkJ",
     "product_list_zR9Cym"
   ]
 }
