@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "blocks": {
     "load_video": "Carregar vídeo: {{ description }}",
@@ -345,6 +354,19 @@
       "post": "Publicar comentário",
       "success_moderated": "Comentário publicado, a aguardar moderação",
       "success": "Comentário publicado"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "company_label": "Contribuinte",
+        "optional_company_label": "Contribuinte (opcional)"
+      },
+      "field_errors": {
+        "address_company_blank": "Introduza o contribuinte ",
+        "address_company_contains_html_tags": "O contribuintes não pode conter etiquetas HTML",
+        "address_company_contains_emojis": "O contribuinte não pode conter emojis"
+      }
     }
   }
 }
