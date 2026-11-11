@@ -17,9 +17,9 @@
         "announcement_mxxhta": {
           "type": "_announcement",
           "settings": {
-            "text": "Na compra de 5 produtos, portes grátis!",
-            "link": "shopify://collections/all",
-            "font": "var(--font-primary--family)",
+            "text": "ENVIOS GRÁTIS A PARTIR DE 80€",
+            "link": "",
+            "font": "var(--font-body--family)",
             "font_size": "var(--font-size--body-md)",
             "weight": "",
             "letter_spacing": "normal",
@@ -31,7 +31,6 @@
       "block_order": [
         "announcement_mxxhta"
       ],
-      "disabled": true,
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
