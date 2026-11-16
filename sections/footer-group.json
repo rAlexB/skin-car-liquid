@@ -484,7 +484,7 @@
             "case": "none",
             "brand_image": "shopify://shop_images/visium_logo_white.png",
             "brand_text": ". Empowered by",
-            "brand_link": "",
+            "brand_link": "https://visiumagency.studio/",
             "brand_logo_height": 1.5
           },
           "blocks": {}
