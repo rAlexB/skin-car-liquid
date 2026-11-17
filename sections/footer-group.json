@@ -41,7 +41,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Seu carro precisa de uma limpeza?</p>",
+                "text": "<p>O seu carro precisa de uma limpeza?</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -138,18 +138,18 @@
           "type": "group",
           "settings": {
             "content_direction": "row",
-            "vertical_on_mobile": false,
+            "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 24,
+            "gap": 25,
             "width": "fill",
             "custom_width": 35,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
-            "height": "fill",
+            "height": "fit",
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -167,8 +167,8 @@
             "link": "",
             "open_in_new_tab": false,
             "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 4,
+            "padding-block-start": 15,
+            "padding-block-end": 15,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -210,7 +210,7 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 60
               },
               "blocks": {
                 "text_FBD78Y": {
@@ -221,7 +221,7 @@
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h3",
+                    "type_preset": "h4",
                     "font": "var(--font-body--family)",
                     "font_size": "1rem",
                     "line_height": "normal",
@@ -235,7 +235,7 @@
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
-                    "padding-inline-end": 100
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -243,7 +243,7 @@
                   "type": "social-links",
                   "name": "t:names.social_media_links",
                   "settings": {
-                    "facebook_url": "",
+                    "facebook_url": "https://www.facebook.com/share/18a3N2vkp2/?mibextid=wwXIfr",
                     "instagram_url": "https://www.instagram.com/skin_car_detailing",
                     "youtube_url": "",
                     "tiktok_url": "https://www.tiktok.com/@skin.car0",
@@ -270,10 +270,10 @@
               "name": "t:names.text",
               "settings": {
                 "text": "<p><a href=\"/pages/help\" title=\"Ajuda\">Ajuda</a></p>",
-                "width": "100%",
+                "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h3",
+                "type_preset": "h4",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -285,16 +285,178 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 0,
-                "padding-block-end": 65,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-end": 60
+              },
+              "blocks": {}
+            },
+            "text_UUPYba": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p><a href=\"https://www.livroreclamacoes.pt/inicio/\" target=\"_blank\" title=\"https://www.livroreclamacoes.pt/inicio/\">Livro de reclamações</a></p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 60
+              },
+              "blocks": {}
+            },
+            "text_rFqBck": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Política de privacidade</a></p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 60
+              },
+              "blocks": {}
+            },
+            "text_CcaUed": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Termos do serviço</a></p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 60
+              },
+              "blocks": {}
+            },
+            "text_yTN3nt": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p><a href=\"/policies/refund-policy\" title=\"Refund Policy\">Política de reembolso</a></p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 60
+              },
+              "blocks": {}
+            },
+            "text_fkEqbm": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p><a href=\"/policies/shipping-policy\" title=\"Shipping Policy\">Política de envio</a></p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 60
+              },
+              "blocks": {}
+            },
+            "text_igbfpb": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p><a href=\"/policies/legal-notice\" title=\"Legal Notice\">Aviso legal</a></p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 60
               },
               "blocks": {}
             }
           },
           "block_order": [
             "group_gTqhqx",
-            "text_rK4HBh"
+            "text_rK4HBh",
+            "text_UUPYba",
+            "text_rFqBck",
+            "text_CcaUed",
+            "text_yTN3nt",
+            "text_fkEqbm",
+            "text_igbfpb"
           ]
         }
       },
@@ -307,8 +469,8 @@
         "section_width": "page-width",
         "gap": 12,
         "color_scheme": "scheme-1",
-        "padding-block-start": 36,
-        "padding-block-end": 18
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "utilities": {
@@ -322,7 +484,7 @@
             "case": "none",
             "brand_image": "shopify://shop_images/visium_logo_white.png",
             "brand_text": ". Empowered by",
-            "brand_link": "",
+            "brand_link": "https://visiumagency.studio/",
             "brand_logo_height": 1.5
           },
           "blocks": {}
