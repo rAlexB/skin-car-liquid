@@ -33,6 +33,7 @@
       <div
         class="ba-slider__track"
         data-ba-slider
+        style="--ba-pos: {{ section.settings.initial_position }}%;"
         aria-label="{{ section.settings.heading | default: 'Before and after comparison' | escape }}"
       >
         <div class="ba-slider__after">
@@ -47,7 +48,7 @@
           }}
         </div>
 
-        <div class="ba-slider__before" style="width: {{ section.settings.initial_position }}%;">
+        <div class="ba-slider__before">
           {{
             section.settings.before_image
             | image_url: width: 1600
@@ -59,8 +60,8 @@
           }}
         </div>
 
-        <div class="ba-slider__divider" style="left: {{ section.settings.initial_position }}%;">
-          <div class="ba-slider__handle" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+        <div class="ba-slider__divider">
+          <div class="ba-slider__handle" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ section.settings.initial_position }}" tabindex="0">
             <svg class="ba-slider__handle-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <circle cx="20" cy="20" r="19" fill="var(--color-accent)" stroke="var(--color-accent-text)" stroke-width="1"/>
               <polyline points="14,20 9,15 9,25" fill="var(--color-accent-text)"/>
@@ -156,8 +157,9 @@
   }
 
   .ba-slider__before {
-    overflow: hidden;
     z-index: 2;
+    /* Crop rather than resize, so the image stays full size behind the divider */
+    clip-path: inset(0 calc(100% - var(--ba-pos, 50%)) 0 0);
   }
 
   .ba-slider__img {
@@ -173,6 +175,7 @@
   .ba-slider__divider {
     position: absolute;
     top: 0;
+    left: var(--ba-pos, 50%);
     bottom: 0;
     z-index: 3;
     transform: translateX(-50%);
@@ -280,8 +283,6 @@
 <script>
   (function () {
     function initSlider(track) {
-      const before = track.querySelector('.ba-slider__before');
-      const divider = track.querySelector('.ba-slider__divider');
       const handle = track.querySelector('.ba-slider__handle');
       let dragging = false;
 
@@ -290,8 +291,7 @@
         let pct = (clientX - rect.left) / rect.width;
         pct = Math.min(1, Math.max(0, pct));
         const pctStr = (pct * 100).toFixed(2) + '%';
-        before.style.width = pctStr;
-        divider.style.left = pctStr;
+        track.style.setProperty('--ba-pos', pctStr);
         handle.setAttribute('aria-valuenow', Math.round(pct * 100));
       }
 
@@ -326,7 +326,7 @@
       handle.addEventListener('keydown', function (e) {
         const step = 0.05;
         const rect = track.getBoundingClientRect();
-        const current = parseFloat(before.style.width) / 100;
+        const current = parseFloat(track.style.getPropertyValue('--ba-pos')) / 100;
         if (e.key === 'ArrowLeft') {
           setPosition(rect.left + (current - step) * rect.width);
           e.preventDefault();
